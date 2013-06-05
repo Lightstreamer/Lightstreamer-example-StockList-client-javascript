@@ -47,7 +47,7 @@ Run The Demos
 Before you can run the demos of this project some dependencies need to be solved:
 
 -  Get the lightstreamer.js file from the [Lightstreamer 5 Colosseo distribution](http://www.lightstreamer.com/download) 
-   and put it in the src/<<Demo>>/js folder of the demo. Alternatively you can build a lightstreamer.js file from the 
+   and put it in the src/<<Demo>>/js folder of the demo (if that is the case, please create it). Alternatively you can build a lightstreamer.js file from the 
    [online generator](http://www.lightstreamer.com/distros/Lightstreamer_Allegro-Presto-Vivace_5_0_Colosseo_20120803/Lightstreamer/DOCS-SDKs/sdk_client_javascript/tools/generator.html).
    In that case be sure to include the LightstreamerClient, Subscription, DynaGrid, StaticGrid, Chart, SimpleChartListener, and StatusWidget modules and to use the "Use AMD" version.
 -  Get the require.js file form the [requirejs.org](http://requirejs.org/docs/download.html) and put it in the src/_demo_/js folder of the demo.
