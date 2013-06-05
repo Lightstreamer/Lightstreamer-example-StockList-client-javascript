@@ -25,9 +25,6 @@
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <title>Lightstreamer :: Chart Demo</title>
   <link rel="stylesheet" type="text/css" href="css/chart.css" />
-  
-  <!-- load Lightstreamer libraries -->
-  <script src="../../_commons/require.js"></script>
 </head>
 
 <body>
@@ -48,7 +45,7 @@
     </table>
     <br><br>
     <table width="440" cellspacing="0" cellpadding="2" border="0">  
-      <tr class="titolClass">
+      <tr class="titleClass">
         <td width="150">
         <p style="text-align: left">Stock</td>
         <td width="80">Time<br><span style="font-size: 7pt">(GMT+01)</span></td>    
@@ -56,13 +53,13 @@
         <td width="105">Normalized<br>Price</td>
       </tr>
       <tr>
-        <td nowrap class="greyClass"><div class="nameClass1" data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="stock_name">-</div></td>
+        <td nowrap class="greyClass"><div class="stockName" data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="stock_name">-</div></td>
         <td class="greyClass"><div class="greyClass" data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="time">-</div></td>
         <td class="greyClass"><div class="greyClass" data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="last_price">-</div></td>
         <td class="greyClass"><div class="greyClass" data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="base_price" data-fieldtype="extra">-</div></td>
       </tr>
       <tr>
-        <td nowrap class="greyClass"><div class="nameClass2" data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="stock_name">-</div></td>
+        <td nowrap class="greyClass"><div class="stockName" data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="stock_name">-</div></td>
         <td class="greyClass"><div class="greyClass" data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="time">-</div></td>
         <td class="greyClass"><div class="greyClass" data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="last_price">-</div></td>
         <td class="greyClass"><div class="greyClass" data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="base_price" data-fieldtype="extra">-</div></td>
@@ -79,6 +76,7 @@
     </table>
   </div>
   
+<!-- load Lightstreamer libraries -->
 <script src="js/require.js"></script>
 <script src="js/lightstreamer.js"></script>
 <script>
@@ -97,8 +95,7 @@
 <script type="text/javascript">
 
   ///////////////////OverwriteTable
-  var lineColor = ["", "", "green", "red"];
-  var pbase=[0,0,0,0];
+  
   
   require(["lsClient","Subscription","StaticGrid","Chart","SimpleChartListener"], 
     function(lsClient,Subscription,StaticGrid,Chart,SimpleChartListener) {
@@ -113,72 +110,51 @@
         
         info.setHotTime(500);
         info.setAttribute("bold","","fontWeight");
+        info.setCellAttribute("stock_name",Colors.getColor(key),Colors.getColor(key),"color");
      
         //format timestamp
         var time = info.getChangedFieldValue("time");
         if (time != null) {
-          info.setCellValue("time",formatTime(time));
+          info.setCellValue("time",Formatters.formatTime(time));
         }
     
-        //format last price
+        //format last price and add normalized price
         var newLast = info.getChangedFieldValue("last_price");
         if (newLast != null) {
-          info.setCellValue("last_price",formatDecimal(newLast, 2, true));
-          
-          // normalized price calculation
-          var itemN = key.substring(4);
-          if ( pbase[itemN] == 0 ) {
-            pbase[itemN] = newLast;
-            info.setCellValue("base_price","100.00");
-          } else {
-            var perc = newLast/pbase[itemN]*100;
-            info.setCellValue("base_price",formatDecimal(perc, 2, true));
-          }
-        }
-    
-        //format normalized price
-        var newnprc = info.getChangedFieldValue(4);
-        if (newnprc != null) {
-          info.setCellValue(4,formatDecimal(newnprc, 2, true));
+          stocksData.updateRow(key,{base_price:NormalizedPriceCalculator.getNormalizedPrice(key,newLast)});
+          info.setCellValue("last_price",Formatters.formatDecimal(newLast, 2, true));
         }
       }
     });
     
+    //Chart conf
     var stocksChart = new Chart("graph", true);
     stocksChart.configureArea("lsgbox",150,400,5,25);
-    stocksChart.setXAxis("time", function(stringDate) {
-      stringDate = new String(stringDate);
-      i1 = stringDate.indexOf(':');
-      i2= stringDate.lastIndexOf(':');
-      return(stringDate.substring(0,i1)*3600+stringDate.substring(i1+1,i2)*60+stringDate.substring(i2+1,stringDate.length)*1);
-    });
-    stocksChart.addYAxis(["last_price"], function(yValue) {
-      var y = new String(yValue);
-      if (y.indexOf(",") > -1 ) {
-        var y=y.replace(",",".");
-      }
-      return new Number(y);
-    });
-    stocksChart.setXLabels(4,"lslbl",formatXlbl);
     
-    stocksChart.addListener(new SimpleChartListener());
+    stocksChart.setXAxis("time", function(stringDate) {
+      return Formatters.getSeconds(stringDate);
+      
+    });
+    stocksChart.addYAxis(["last_price"], function(yValue,key) {
+      return NormalizedPriceCalculator.getNormalizedPrice(key,yValue);
+    });
+    
+    stocksChart.setXLabels(4,"lslbl",function(val) {
+      return Formatters.formatTime(Formatters.getTime(val));
+    });
+    
+    stocksChart.addListener(new SimpleChartListener(60,10));
     stocksChart.addListener({
+      lblSet: false,
       onNewLine: function(key,newChartLine,nowX,nowY) {
-        if ( key.substring(4) == 2 ) {
-          newChartLine.setYLabels(5,"lslbl",formatYlbl);
-          
-          // Y axis range.
-          var minY=nowY*0.9;
-          var maxY=nowY*1.1;
-          newChartLine.positionYAxis(minY,maxY);
+        if (!this.lblSet) {
+          this.lblSet = true;
+          newChartLine.setYLabels(5,"lslbl",function(val) {
+            return Formatters.formatDecimal(val,2,true);
+          });
         }
-        
-        // X axis range.
-        var maxX = getSeconds(nowX)+300;
-        var minX = getSeconds(nowX);
-        stocksChart.positionXAxis(minX, maxX);
-        
-        newChartLine.setStyle(lineColor[key.substring(4)],lineColor[key.substring(4)],1,1);
+        var lineColor = Colors.getColor(key);
+        newChartLine.setStyle(lineColor,lineColor,1,1);
       }
     });
     
@@ -193,77 +169,102 @@
    
   });
   
-  function formatTime(val) {
-    var a = new Number(val.substring(0,val.indexOf(":")));
-    if (a > 12) {
-      a -= 12;
-    }
-    var b = val.substring(val.indexOf(":"),val.length);
-    return a + b;
-  }
-  
-  function formatDecimal(value, decimals, keepZero) {
-    var mul = new String("1");
-    var zero = new String("0");
-    for (var i = decimals; i > 0; i--) {
-      mul += zero;
-    }
-    value = Math.round(value * mul);
-    value = value / mul;
-    var strVal = new String(value);
-    if (!keepZero) {
-      return strVal;  
-    }
+  //to keep it simple we never reset it
+  var NormalizedPriceCalculator = {
+    pbase: {},
     
-    var nowDecimals = 0;
-    var dot = strVal.indexOf(".");
-    if (dot == -1) {
-      strVal += ".";
-    } else {
-       nowDecimals = strVal.length - dot - 1;
+    getNormalizedPrice: function(key,val) {
+      if (!this.pbase[key]) {
+        this.pbase[key] = val;
+        return 100.00;
+      } else {
+        var perc = val/this.pbase[key]*100;
+        return Formatters.formatDecimal(perc, 2, true);
+      }
     }
-    for (var i = nowDecimals; i < decimals; i++) {
-      strVal = strVal + zero;
+  };
+  
+  var Colors = {
+    colors: ["green","red","blue","black"],
+    assignedColor: {},
+    getColor: function(key) {
+      if (!this.assignedColor[key]) {
+        this.assignedColor[key] = this.colors.shift();
+      }
+      return this.assignedColor[key] ;
     }
+  };
+  
+  var Formatters = {
+    formatTime: function(val) {
+      var a = new Number(val.substring(0,val.indexOf(":")));
+      if (a > 12) {
+        a -= 12;
+      }
+      var b = val.substring(val.indexOf(":"),val.length);
+      return a + b;
+    },
+    
+    formatDecimal: function(value, decimals, keepZero) {
+      var mul = new String("1");
+      var zero = new String("0");
+      for (var i = decimals; i > 0; i--) {
+        mul += zero;
+      }
+      value = Math.round(value * mul);
+      value = value / mul;
+      var strVal = new String(value);
+      if (!keepZero) {
+        return strVal;  
+      }
       
-    return strVal;
-  }
-
-  function getSeconds(stringDate) {
-    stringDate = new String(stringDate);
-    i1 = stringDate.indexOf(':');
-    i2 = stringDate.lastIndexOf(':');
-    return(stringDate.substring(0,i1)*3600+stringDate.substring(i1+1,i2)*60+stringDate.substring(i2+1,stringDate.length)*1);
-  }
-  
-  function formatYlbl (val) {
-    return formatDecimal(val/pbase[2]*100,2,true);
-  }
-  
-  function formatXlbl (val) {
-    return formatTime(getTime(val));
-  }
-  
-  function getTime(secondsStr) {
-    var hours = Math.floor(secondsStr/(60*60));
-    var seconds = secondsStr - (hours * (60*60));
-    var minutes = Math.floor(seconds/60);
-    var seconds = Math.round(seconds - (minutes * 60));
+      var nowDecimals = 0;
+      var dot = strVal.indexOf(".");
+      if (dot == -1) {
+        strVal += ".";
+      } else {
+         nowDecimals = strVal.length - dot - 1;
+      }
+      for (var i = nowDecimals; i < decimals; i++) {
+        strVal = strVal + zero;
+      }
+        
+      return strVal;
+    },
     
-    if (minutes.toString().length < 2) {
-      minutes = ":0" + minutes; 
-    } else {
-      minutes = ":" + minutes; 
+    getTime: function(secondsStr) {
+      var hours = Math.floor(secondsStr/(60*60));
+      var seconds = secondsStr - (hours * (60*60));
+      var minutes = Math.floor(seconds/60);
+      var seconds = Math.round(seconds - (minutes * 60));
+      
+      if (minutes.toString().length < 2) {
+        minutes = ":0" + minutes; 
+      } else {
+        minutes = ":" + minutes; 
+      }
+      
+      if (seconds.toString().length < 2) {
+        seconds = ":0" + seconds; 
+      } else {
+        seconds = ":" + seconds; 
+      }
+      
+      return hours +  minutes + seconds;
+    },
+    
+    getSeconds: function(stringDate) {
+      stringDate = new String(stringDate);
+      i1 = stringDate.indexOf(':');
+      i2= stringDate.lastIndexOf(':');
+     
+      return(stringDate.substring(0,i1)*3600+stringDate.substring(i1+1,i2)*60+stringDate.substring(i2+1,stringDate.length)*1);
     }
-    
-    if (seconds.toString().length < 2) {
-      seconds = ":0" + seconds; 
-    } else {
-      seconds = ":" + seconds; 
-    }
-    
-    return hours +  minutes + seconds;
-  }
+   
+  };
+  
+  
+  
     
 </script>
 
