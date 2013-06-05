@@ -1,0 +1,73 @@
+/*
+ * LIGHTSTREAMER - www.lightstreamer.com
+ * Chart Demo
+ */
+.titolClass {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: #ffffff; 
+	background: #999999; 
+	font-weight: bold; 
+	text-align: right;
+}
+.greyClass {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: #000000; 
+	background: #eeeeee; 
+	font-weight: normal; 
+	text-align: right;
+}
+.nameClass1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: green; 
+	background: #eeeeee; 
+	font-weight: bold; 
+	text-align: left;
+}
+.nameClass2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: red; 
+	background: #eeeeee; 
+	font-weight: bold; 
+	text-align: left;
+}
+.note { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 7pt; 
+	color: #000000; 
+	background: #ffffff; 
+	font-weight: normal; 
+	text-align: center; 
+}
+.lslbl { 
+	width: 40; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: #000080; 
+	background: #ffffff; 
+	text-align: right; 
+	border-style: none;
+}
+.lspx1 { 
+	width:1px; 
+	height:1px; 
+	background-color:green; 
+}
+.lspx2 { 
+	width:1px; 
+	height:1px; 
+	background-color:red; 
+}
+.lsgbox {
+	background: #ffffbb url(../images/cbg.jpg); 
+}
+.space {
+	height:170;
+}
+#wrap  {
+  width: 440px;
+  margin: 0 auto;
+}

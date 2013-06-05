@@ -1,0 +1,331 @@
+<!DOCTYPE html >
+
+<!--
+  LIGHTSTREAMER - www.lightstreamer.com
+  Stock-List Demo
+  
+  Copyright 2013 Weswit s.r.l.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Lightstreamer :: Stock-List Demo</title>
+  <link rel="stylesheet" type="text/css" href="css/table.css" />
+</head>
+
+<body vlink="#6c21b1" link="#0000ee" bgcolor="#ffffff" bottommargin="0" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<a href="https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript"><img style="position: absolute; top: 0; right: 0; border: 0; z-index:1" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+<div id="wrap">
+  <img border="0" src="images/header.png" usemap="#header.gif" width="796" height="161" alt="Please note: these menus are not active" />
+  <map name="header.gif"><area shape="rect" coords="0,0,205,62" href="http://www.lightstreamer.com" target="_blank"></map>
+
+  <!-- stocks table -->
+  <table cellpadding="2" cellspacing="0" width="790" border="0" > 
+   <tr class="tabletitle">
+      <td nowrap id="col_stock_name" width="148" style="text-align: left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="col_stock_name_s" onclick="changeSort('stock_name');return false;" class="tabletitle">Name</a>
+        <img width="10" src="images/spacer.gif" id="img_stock_name" /></td>
+      <td nowrap id="col_last_price" width="42"><a href="#" id="col_last_price_s" onclick="changeSort('last_price');return false;" class="tabletitle" >Last</a>
+        <img width="10" src="images/spacer.gif" id="img_last_price" /></td>
+      <td nowrap id="col_time" width="64" style="text-align: center"><a href="#" id="col_time_s" onclick="changeSort('time');return false;" class="tabletitle">Time</a>
+        <img width="10" src="images/spacer.gif" id="img_time" /></td>
+      <td nowrap id="col_arrow" width="24" style="text-align: center"><a href="#" id="col_arrow_s" onclick="changeSort('pct_change');return false;" class="tabletitle">+/-</a></td>
+      <td nowrap id="col_pct_change" width="61"><a href="#" id="col_pct_change_s" onclick="changeSort('pct_change');return false;" class="tabletitle">Change</a>
+        <img width="10" src="images/spacer.gif" id="img_pct_change" /></td>
+      <td nowrap id="col_bid_quantity" width="60"><a href="#" id="col_bid_quantity_s" onclick="changeSort('bid_quantity');return false;" class="tabletitle">Bid Size</a>
+        <img width="10" src="images/spacer.gif" id="img_bid_quantity" /></td>
+      <td nowrap id="col_bid" width="50"><a href="#" id="col_bid_s" onclick="changeSort('bid');return false;" class="tabletitle">Bid</a>
+        <img width="10" src="images/spacer.gif" id="img_bid" /></td>
+      <td nowrap id="col_ask" width="50"><a href="#" id="col_ask_s" onclick="changeSort('ask');return false;" class="tabletitle">Ask</a>
+        <img width="10" src="images/spacer.gif" id="img_ask" /></td>
+      <td nowrap id="col_ask_quantity" width="60"><a href="#" id="col_ask_quantity_s" onclick="changeSort('ask_quantity');return false;" class="tabletitle">Ask Size</a>
+        <img width="10" src="images/spacer.gif" id="img_ask_quantity" /></td>
+      <td nowrap id="col_min" width="50"><a href="#" id="col_min_s" onclick="changeSort('min');return false;" class="tabletitle">Min</a>
+        <img width="10" src="images/spacer.gif" id="img_min" /></td>
+      <td nowrap id="col_max" width="50"><a href="#" id="col_max_s" onclick="changeSort('max');return false;" class="tabletitle">Max</a>
+        <img width="10" src="images/spacer.gif" id="img_max" /></td>
+      <td nowrap id="col_ref_price" width="50"><a href="#" id="col_ref_price_s" onclick="changeSort('ref_price');return false;" class="tabletitle">Ref.</a>
+        <img width="10" src="images/spacer.gif" id="img_ref_price" /></td>
+      <td nowrap id="col_open_price" width="50"><a href="#" id="col_open_price_s" onclick="changeSort('open_price');return false;" class="tabletitle">Open</a>
+        <img width="10" src="images/spacer.gif" id="img_open_price" /></td>
+    </tr>
+    
+    <tr id="stocks"  data-source="lightstreamer" class="lscoldA" border="0" >
+      <td nowrap style="text-align: left">
+        <a href="#" data-source="lightstreamer" data-field="click" data-update="onclick">
+          <img src="images/popup.gif" width="16" height="16" border="0" align="left" hspace="1" alt="Graphic Chart">
+          <div id="stockName" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #000080; font-weight: bold; text-align: left;" data-source="lightstreamer" data-field="stock_name">Loading...</div>
+        </a>
+      </td>
+      <td><div data-source="lightstreamer" data-field="last_price">-</div></td>
+      <td><div data-source="lightstreamer" data-field="time">-</div></td>
+      <td> 
+        <div>
+          <img data-source="lightstreamer" data-field="arrow" data-update="src" src="images/spacer.gif" width="20" height="8" border="0">
+        </div>
+      </td>
+      <td nowrap="nowrap"><div data-source="lightstreamer" data-field="pct_change">-</div></td>
+      <td><div data-source="lightstreamer" data-field="bid_quantity">-</div></td>
+      <td><div data-source="lightstreamer" data-field="bid">-</div></td>
+      <td><div data-source="lightstreamer" data-field="ask">-</div></td>
+      <td><div data-source="lightstreamer" data-field="ask_quantity">-</div></td>
+      <td><div data-source="lightstreamer" data-field="min">-</div></td>
+      <td><div data-source="lightstreamer" data-field="max">-</div></td>
+      <td><div data-source="lightstreamer" data-field="ref_price">-</div></td>
+      <td><div data-source="lightstreamer" data-field="open_price">-</div></td>
+    </tr>
+    
+    <tr>
+      <td class="disc">Simulated market data.</td>
+      <td colspan="12" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; color: #000000; background: #ffffff; font-weight: bold; text-align: right">
+        <a href="#" id="switchP2" style="display:none" onClick="changePage(2); return false;"> Next 15 >> </a>
+        <a href="#" id="switchP1" style="display:none" onClick="changePage(1); return false;"> << Previous 15 </a>
+      </td>
+    </tr>
+  </table>
+
+  <br />
+  <p class="note">
+    <b>WHAT YOU CAN DO</b><br />
+    - Click on the stock names to open pop-up windows with streaming charts (Ations 
+	Europe is the fastest).<br />
+    - Click on &quot;Next 15&quot; / &quot;Previous 15&quot; at the bottom to switch the tables.<br />
+    - Click on any table title to SORT on different columns (each click inverts the 
+  sort direction and the third click disables sorting).
+  </p>
+</div>
+<!-- load Lightstreamer libraries -->
+<script src="js/require.js"></script>
+<script src="js/lightstreamer.js"></script>
+<script src="js/format.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+  var redColor = "#f8b87a";
+  var greenColor = "lightgreen";
+  var backC = "transparent";
+  var hotTxtCol = "#000000";
+  var fieldsList = ["last_price", "time", "pct_change", "bid_quantity", "bid", "ask", "ask_quantity", "min", "max", "ref_price", "open_price", "stock_name", "item_status"];
+  var itemList1 = ["item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10", "item11", "item12", "item13", "item14", "item15"];
+  var itemList2 = ["item16", "item17", "item18", "item19", "item20", "item21", "item22", "item23", "item24", "item25", "item26", "item27", "item28", "item29", "item30"];
+  var imgUp = "images/quotes_up.gif";
+  var imgDown = "images/quotes_down.gif";
+  var doFade = location.search.indexOf("fade=ON") > -1;
+  var unique = Math.floor(Math.random() * 1000);
+  var lsClient;
+  var pageNumber = 1;
+  var subsItemList1;
+  var subsItemList2;
+  var styleH = "lshot";
+  var styleC = "lscold";
+  var dynaGrid = null;
+  
+  //////////////// Grid Sort Management
+
+  var initialSort = "stock_name";
+  var direction = false; // true = decreasing; false = increasing; null = no sort
+
+  function changeSort(sortOn) {
+    var sortedBy = dynaGrid.getSortField();
+    if (sortOn == sortedBy) {
+      if (direction == false) {
+        direction = true;
+        document.getElementById("img_" + sortOn).src = "images/down.gif";
+      } else if (direction == true) {
+        direction = null;
+        document.getElementById("img_" + sortOn).src = "images/spacer.gif";
+        document.getElementById("col_" + sortOn + "_s").className = "tabletitle";
+        document.getElementById("col_" + sortOn).className = "tabletitle";
+      } else {
+        direction = false;
+        document.getElementById("img_" + sortOn).src = "images/up.gif";
+      }
+    } else {
+      direction = false;
+      if (sortedBy != null) {
+        document.getElementById("img_" + sortedBy).src = "images/spacer.gif";
+        document.getElementById("col_" + sortedBy + "_s").className = "tabletitle";
+        document.getElementById("col_" + sortedBy).className = "tabletitle";
+      }
+      document.getElementById("img_" + sortOn).src = "images/up.gif";
+      document.getElementById("col_" + sortOn + "_s").className = "tableTitleSorted";
+      document.getElementById("col_" + sortOn).className = "tableTitleSorted";
+    }
+
+    if (direction == null) {
+      dynaGrid.setSort(null);
+    } else {
+      if (sortOn == "time" || sortOn == "stock_name") {
+        dynaGrid.setSort(sortOn, direction);
+      } else { 
+        dynaGrid.setSort(sortOn, direction, true, false);
+      }
+    }
+  }
+  
+  require(["js/lsClient","Subscription","DynaGrid"], 
+    function(lsClient,Subscription,DynaGrid) {
+    
+    dynaGrid = new DynaGrid("stocks",true);
+    var cellList = dynaGrid.extractFieldList()
+    
+    // dynaGrid.setSort("stock_name");
+    changeSort("stock_name");
+    dynaGrid.setNodeTypes(["div","span","img","a"]);
+    dynaGrid.setAutoCleanBehavior(true, false);
+    dynaGrid.addListener({
+      onVisualUpdate: function(key,info,domNode) {
+        if (info == null) {
+          return;
+        }
+
+        //general style and effects
+        info.setHotTime(400);
+        info.setStyle(styleH,styleC);
+        if (info.getChangedFieldValue("stock_name") != null) {
+          dynaGrid.updateRow(key,{click:"openPopup('"+key+"');return false;"});
+        } else if (doFade) {
+          info.setHotToColdTime(300);
+        }
+
+        if (info.getChangedFieldValue("item_status") == "inactive") {
+          //possible if testing the JMS version of the Data Adapter 
+          //if it happens we want all the cells to be highlighted in grey;
+          //first we force the highlighting on every cell
+          forceHighlight(info,true,cellList);
+
+          info.setAttribute("#808080","#808080","color");
+
+        } else {
+
+          if ((info.getChangedFieldValue("item_status") == "active" && dynaGrid.getValue(key,"item_status") == "inactive")) {
+            //possible if testing the JMS version of the Data Adapter
+            //so we force again the highlighting on every cell to restore 
+            //the "active" color
+            forceHighlight(info,true,cellList);
+
+            info.setAttribute("#000000","#000000","color");
+            info.setCellAttribute("stock_name","#000080","#000080","color");
+          }
+        
+          // illumination color
+          // choose the backgroundColor                
+          var lastPrice = info.getChangedFieldValue("last_price");
+          if (lastPrice !== null) {
+            var prevPrice = dynaGrid.getValue(key,"last_price");
+            if (!prevPrice || lastPrice > prevPrice) {
+              info.setAttribute(greenColor,null,"backgroundColor");
+            } else {
+              info.setAttribute(redColor,null,"backgroundColor");
+            }
+          } else {
+            info.setAttribute(greenColor,null,"backgroundColor");
+          }
+          
+          //put arrow and handle change style
+          var pctChange = info.getChangedFieldValue("pct_change");
+          if (pctChange !== null) {
+            pctChange = formatDecimal(pctChange,2,true)+"%";
+            hotTxtCol = (pctChange.charAt(0) == '-') ? "#dd0000" : "#009900";
+            if (pctChange.indexOf("-") > -1) {
+              info.setCellValue("arrow",imgDown);
+              info.setCellAttribute("arrow",null,null,"backgroundColor");
+              
+              info.setCellAttribute("pct_change","black",hotTxtCol,"color");
+              info.setCellValue("pct_change",pctChange);
+            } else {
+              info.setCellValue("arrow",imgUp);
+              info.setCellAttribute("arrow",null,null,"backgroundColor");
+                      
+              info.setCellAttribute("pct_change","black",hotTxtCol,"color");
+              info.setCellValue("pct_change","+"+pctChange);
+  
+             }
+            info.setCellAttribute("pct_change","bold","bold","fontWeight");
+          }
+          
+          // format decimal fields.
+          formatDecimalField(info, "last_price");
+          formatDecimalField(info, "bid");
+          formatDecimalField(info, "ask");
+          formatDecimalField(info, "min");
+          formatDecimalField(info, "max");
+          formatDecimalField(info, "ref_price");
+          formatDecimalField(info, "open_price");
+          
+          // format the timestamp
+          var time = info.getChangedFieldValue("time");
+          if (time != null) {
+            info.setCellValue("time",formatTime(time));
+          }
+
+        }
+
+      }
+    });
+    
+    subsItemList1 = new Subscription("MERGE",itemList1,fieldsList);
+    subsItemList1.addListener(dynaGrid);
+    subsItemList1.setDataAdapter("QUOTE_ADAPTER");
+    subsItemList1.setRequestedSnapshot("yes");
+    subsItemList1.setRequestedMaxFrequency(1);
+    
+    subsItemList2 = new Subscription("MERGE",itemList2,fieldsList);
+    subsItemList2.addListener(dynaGrid);
+    subsItemList2.setDataAdapter("QUOTE_ADAPTER");
+    subsItemList2.setRequestedSnapshot("yes");
+    subsItemList2.setRequestedMaxFrequency(1);
+    
+    lsClient.subscribe(subsItemList1);  
+    //lsClient.subscribe(subsItemList2); //we may also subscribe both lists simultaneously  
+    window.lsClient = lsClient;
+    
+    //enable switch
+    document.getElementById("switchP2").style.display = "";
+
+  }); 
+
+//////////////// Stock Details Popup Management
+  function openPopup(item) {
+    var wdt = window.open("popup.html?item=" + item, "SLDpopup_" + unique + "_" + item, "width=575,height=238,history=0,resizable,status=1,menubar=1");
+    wdt.focus();
+    return false;
+  }
+
+//////////////// Stock Grid Management
+  
+
+  function changePage(groupNumber) {
+    if (groupNumber == 1) {
+      pageNumber = 1;
+      document.getElementById("switchP1").style.display = "none";
+      document.getElementById("switchP2").style.display = "";
+      lsClient.unsubscribe(subsItemList2); 
+      lsClient.subscribe(subsItemList1); 
+    } else if (groupNumber == 2) {
+      pageNumber = 2;
+      document.getElementById("switchP1").style.display = "";
+      document.getElementById("switchP2").style.display = "none";
+      lsClient.unsubscribe(subsItemList1); 
+      lsClient.subscribe(subsItemList2); 
+    }
+  }
+
+
+</script>
+
+</body>
+
+</html>
