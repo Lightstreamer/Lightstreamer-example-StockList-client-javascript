@@ -1,0 +1,67 @@
+/*
+ * LIGHTSTREAMER - www.lightstreamer.com
+ * Stock-List Demo (Pop-Up Window)
+ */
+.wintitle {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  color: #000080;
+  background: #ffffff;
+  font-weight: bold;
+  text-align: left
+}
+.tabletitle {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 7pt;
+  color: #ffffff;
+  background: #9494ce;
+  font-weight: bold;
+  text-align: left;
+  width: 60%;
+}
+.tabledata {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  background: #efefef;
+  color: #000000;
+  font-weight: normal;
+  text-align: right;
+  width: 40%;
+}
+.lscold {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  color: #000000;
+  font-weight: normal;
+  text-align: right
+}
+.lslbly {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  color: #000000;
+  background: #ffffff;
+  text-align: right;
+  border-style: none
+}
+.lslblx {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  color: #000000;
+  background: #ffffff;
+  text-align: left;
+  border-style: none
+}
+.lspx {
+  width:1px;
+  height:1px;
+  background-color: black;
+}
+.lspxbig {
+  width:1px;
+  height:1px;
+  background-color: black;
+}
+.lsgbox {
+  background: #efefef
+  url(../images/cbg.jpg);
+}

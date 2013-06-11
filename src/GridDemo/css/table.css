@@ -1,0 +1,78 @@
+/*
+ * LIGHTSTREAMER - www.lightstreamer.com
+ * Simple Grid Demo
+ */
+.demoTitle {
+  font-family: Verdana, Arial, Helvetica, Sans-serif;
+  font-size: 9pt;
+  color: #000000;
+  font-weight: bold;
+  text-align: right;
+}
+.tabletitle { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 7pt; 
+	color: #ffffff; 
+	background: #3399ff; 
+	font-weight: bold; 
+	text-align: right;
+}
+.note { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt;
+	color: #000000; 
+	background: #ffffff;
+	font-weight: normal; 
+	text-align: left 
+}
+.stocknameA { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: #000080; 
+	background: #f0f8ff; 
+	font-weight: bold; 
+	text-align: left;
+}
+.stocknameB { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: #000080; 
+	background: #dfefff; 
+	font-weight: bold; 
+	text-align: left; 
+}
+.lscoldA { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: #000000;
+	background: #f0f8ff; 
+	font-weight: normal; 
+	text-align: right; 
+}
+.lscoldB { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: #000000; 
+	background: #dfefff; 
+	font-weight: normal; 
+	text-align: right; 
+}
+.cursor {
+	position:absolute;
+	top:0px;
+	left:-6px;
+	width:21px;
+	height:11px;
+	background:transparent url(../images/handle.png) no-repeat top;
+	overflow: visible;
+}
+.slideLine {
+	width:10px;
+	background-color:#000;
+	height:100px;
+	position:relative;
+}
+#wrap {
+  width: 810px;
+  margin: 0 auto;
+}

@@ -1,0 +1,353 @@
+<!DOCTYPE html >
+  
+<!--
+  LIGHTSTREAMER - www.lightstreamer.com
+  Bandwidth and Frequency Demo
+  
+  Copyright 2013 Weswit s.r.l.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Lightstreamer :: Bandwidth and Frequency Demo</title>
+  <link rel="stylesheet" type="text/css" href="css/table.css" />
+
+  <!-- load Script.aculo.us libraries (used for implementing the sliders) -->
+  <script src="js/scriptaculous/prototype.js" type="text/javascript"></script>
+  <script src="js/scriptaculous/scriptaculous.js?load=slider" type="text/javascript"></script>
+</head>
+<body>
+  <a href="https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript"><img style="position: absolute; top: 0; right: 0; border: 0; z-index:1" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+  <div id="wrap">
+    <table border="0" width="100%" id="table1">
+      <tr>
+        <td>&nbsp;</td>
+        <td width="350px" style="vertical-align: top">
+          <a href="http://www.lightstreamer.com" target="_NEW"><img src="images/logo.png" border="0" alt="Lightstreamer" /></a>
+          <div class="demoTitle">BANDWIDTH AND FREQUENCY DEMO</div>
+        </td>
+        <td>
+          <table border="0">
+            <tr>
+              <td colspan="2" class="note" style="text-align:left;font-weight:bold;">Max Bandwidth (for full page)</td>
+            </tr>
+            <tr>
+              <td width="200px">
+                <div class="slideLine" id="selectBandwidth">
+                  <div class="cursor" id="handleSelectBandwidth"> </div>
+                </div>
+              </td>
+              <td width="150px">
+                <div class="note" style="font-weight: bold; text-align: left"><span id="nowBandwidth">unlimited</span> kbps</div>
+              </td>
+            </tr>
+             <tr>
+              <td colspan="2" class="note" style="text-align:left;font-weight:bold;">Max Frequency (for each item)</td>
+            </tr>
+            <tr>
+              <td width="200px">
+                <div class="slideLine" id="selectFrequency">
+                  <div class="cursor" id="handleSelectFrequency"> </div>
+                </div>
+              </td>
+              <td width="200px">
+                <div class="note" style="font-weight: bold; text-align: left"><span id="nowFrequency">unlimited</span> updates/second per item</div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="note" style="text-align: left; color: #000022">
+                <br />
+                - <b>Use the sliders</b> to change max bandwidth and item update frequency<br />
+                - <b>Click on Next 15</b>/<b>Previous 15</b> at the bottom to switch the tables.<br />
+                <br />
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+
+    <table cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td width="5">
+        <img height="1" alt="" src="images/spacer_4px.gif" width="5" border="0">
+        </td>
+        <td valign="top">
+        <table cellspacing="0" cellpadding="2" width="790" border="0">
+          <tr class="tabletitle">
+            <td width="148" style="text-align: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name</td>
+            <td width="42">Last</td>
+            <td width="64" style="text-align: center">Time</td>
+            <td width="61">Change</td>
+            <td width="50">Bid Size</td>
+            <td width="50">Bid</td>
+            <td width="50">Ask</td>
+            <td width="50">Ask Size</td>
+            <td width="50">Min</td>
+            <td width="50">Max</td>
+            <td width="50">Ref.</td>
+            <td width="50">Open</td>
+          </tr>
+
+          <tr id="stocks"  data-source="lightstreamer" class="lscoldA" border="0">
+            <td nowrap style="text-align: left">
+              <div id="stockName" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #000080; background: #eeeeee; font-weight: bold; text-align: left;" data-source="lightstreamer" data-field="stock_name">Loading...</div>
+            </td>
+            <td><div data-source="lightstreamer" data-field="last_price">-</div></td>
+            <td><div data-source="lightstreamer" data-field="time">-</div></td>
+            <td nowrap="nowrap"><div data-source="lightstreamer" data-field="pct_change">-</div></td>
+            <td><div data-source="lightstreamer" data-field="bid_quantity">-</div></td>
+            <td><div data-source="lightstreamer" data-field="bid">-</div></td>
+            <td><div data-source="lightstreamer" data-field="ask">-</div></td>
+            <td><div data-source="lightstreamer" data-field="ask_quantity">-</div></td>
+            <td><div data-source="lightstreamer" data-field="min">-</div></td>
+            <td><div data-source="lightstreamer" data-field="max">-</div></td>
+            <td><div data-source="lightstreamer" data-field="ref_price">-</div></td>
+            <td><div data-source="lightstreamer" data-field="open_price">-</div></td>
+          </tr>
+          
+          <tr>
+            <td colspan="8" class="disc">(Simulated market data)</td>
+            <td colspan="6">
+            <p class="note" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; color: #000000; background: #ffffff; font-weight: bold; text-align: right">
+            <a href="#" id="switchP2" style="display:none" onclick="changePage(2); return false;">
+            Next 15 &gt;&gt; </a>
+            <a href="#" id="switchP1" onclick="changePage(1); return false;">
+            &lt;&lt; Previous 15 </a></p>
+            </td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+<!-- load Lightstreamer libraries -->
+<script src="js/require.js"></script>
+<script src="js/lightstreamer.js"></script>
+
+<script type="text/javascript">
+
+  var fieldsList = ["last_price", "time", "pct_change", "bid_quantity", "bid", "ask", "ask_quantity", "min", "max", "ref_price", "open_price", "stock_name", "item_status"];
+  var itemList1 = ["item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10", "item11", "item12", "item13", "item14", "item15"];
+  var itemList2 = ["item16", "item17", "item18", "item19", "item20", "item21", "item22", "item23", "item24", "item25", "item26", "item27", "item28", "item29", "item30"];
+  var actGroup = null;
+  var maxBandVal = 5.5;
+  var maxFreqVal = 2.1;
+  var onLoadPage = 1;
+  var hotColor = "#efb23b";
+  var lsClient;
+  
+  var subsItemList1;
+  var subsItemList2;
+
+  /////////////////LightstreamerClient Configuration
+  require(["js/lsClient","Subscription","DynaGrid"], 
+    function(lsClient,Subscription,DynaGrid) {
+    
+    window.lsClient = lsClient;
+    
+    lsClient.connectionOptions.setMaxBandwidth("unlimited");
+    
+    var dynaGrid = new DynaGrid("stocks",true);
+    
+    dynaGrid.setSort("stock_name");
+    dynaGrid.setNodeTypes(["div","span","img","a"]);
+    dynaGrid.setAutoCleanBehavior(true, false);
+    dynaGrid.addListener({
+      onVisualUpdate: function(key,info,domNode) {
+        if (info == null) {
+          return;
+        }
+
+        //general style and effects
+        var cold = (key.substring(4) % 2 == 1) ? "#eeeeee" : "#ddddee";
+        domNode.style.backgroundColor = cold;
+        
+        info.setHotTime(600);
+        info.setAttribute(hotColor, cold, "backgroundColor");
+          
+        // format decimal fields.
+        formatDecimalField(info, "last_price");
+        formatDecimalField(info, "bid");
+        formatDecimalField(info, "ask");
+        formatDecimalField(info, "min");
+        formatDecimalField(info, "max");
+        formatDecimalField(info, "ref_price");
+        formatDecimalField(info, "open_price");
+         
+        // format the timestamp
+        var time = info.getChangedFieldValue("time");
+        if (time != null) {
+          info.setCellValue("time",formatTime(time));
+        }
+      }
+    });
+    
+    subsItemList1 = new Subscription("MERGE",itemList1,fieldsList);
+    subsItemList1.addListener(dynaGrid);
+    subsItemList1.setDataAdapter("QUOTE_ADAPTER");
+    subsItemList1.setRequestedSnapshot("yes");
+    subsItemList1.setRequestedMaxFrequency("unlimited");
+    
+    subsItemList2 = new Subscription("MERGE",itemList2,fieldsList);
+    subsItemList2.addListener(dynaGrid);
+    subsItemList2.setDataAdapter("QUOTE_ADAPTER");
+    subsItemList2.setRequestedSnapshot("yes");
+    subsItemList2.setRequestedMaxFrequency("unlimited");
+    
+    lsClient.subscribe(subsItemList1);  
+    //lsClient.subscribe(subsItemList2); //we may also subscribe both lists simultaneously  
+    
+    document.getElementById("switchP1").style.display = "none";
+    document.getElementById("switchP2").style.display = "";
+  }); 
+
+  // format a decimal number to a fixed number of decimals
+  function formatDecimalField(info, field) {
+    var newValue = info.getChangedFieldValue(field);
+    if (newValue != null) {
+      var formattedVal = formatDecimal(newValue, 2, true);
+      info.setCellValue(field,formattedVal);
+    }
+  }
+  
+  function formatDecimal(value, decimals, keepZero) {
+    var mul = new String("1");
+    var zero = new String("0");
+    for (var i = decimals; i > 0; i--) {
+      mul += zero;
+    }
+    value = Math.round(value * mul);
+    value = value / mul;
+    var strVal = new String(value);
+    if (!keepZero) {
+      return strVal;
+    }
+
+    var nowDecimals = 0;
+    var dot = strVal.indexOf(".");
+    if (dot == -1) {
+      strVal += ".";
+    } else {
+      nowDecimals = strVal.length - dot - 1;
+    }
+    for (var i = nowDecimals; i < decimals; i++) {
+      strVal = strVal + zero;
+    }
+
+    return strVal;
+  }
+  
+  // time format from [0-24] to [0-12] (without AM / PM )
+  function formatTime(val) {
+    var a = new Number(val.substring(0,val.indexOf(":")));
+    if (a > 12) {
+      a -= 12;
+    }
+    var b = val.substring(val.indexOf(":"),val.length);
+    return a + b;
+  }
+  
+//////////////// Stock Grid Management
+
+  function changePage(groupNumber) {
+    if (groupNumber == 1) {
+      document.getElementById("switchP1").style.display = "none";
+      document.getElementById("switchP2").style.display = "";
+      lsClient.unsubscribe(subsItemList2); 
+      lsClient.subscribe(subsItemList1); 
+    } else if (groupNumber == 2) {
+      document.getElementById("switchP1").style.display = "";
+      document.getElementById("switchP2").style.display = "none";
+      lsClient.unsubscribe(subsItemList1); 
+      lsClient.subscribe(subsItemList2); 
+    }
+  }
+
+  //////////////// Slider configuration
+  
+  //Bandwidth slider
+  var values = [];
+  for (var x = 0.5; x <= maxBandVal; x += 0.5) {
+    values.push(x);
+  }
+  var bwslider = new Control.Slider('handleSelectBandwidth','selectBandwidth',{sliderValue:maxBandVal,values:values,step:0.5,increment:0.5,range:$R(0.5,maxBandVal),
+        onSlide:function(v) {
+          updateBWInd(v);
+        },
+        onChange:function(v) {
+          updateBWInd(v);
+           if (lsClient) {
+             if (v == maxBandVal) {
+               v = "unlimited";
+             }  
+             lsClient.connectionOptions.setMaxBandwidth(v);
+           }
+            //maxBandVal = v;
+        }
+  });
+                
+  function updateBWInd(v) {
+    if (v == maxBandVal) {
+      document.getElementById("nowBandwidth").innerHTML = "unlimited";
+      return;
+    }
+
+    var txt = v.toString();
+    if (txt.indexOf(".5") <= -1) {
+      document.getElementById("nowBandwidth").innerHTML = txt + ".0";
+    } else {
+      document.getElementById("nowBandwidth").innerHTML = v;
+    }
+  }
+  
+  //Frequency slider
+  var freqValues = [];
+  for (var x = 0.1; x <= maxFreqVal+0.1; x += 0.1) {
+    freqValues.push(x);
+  }
+  
+  var freqSlider = new Control.Slider('handleSelectFrequency','selectFrequency',{sliderValue:maxFreqVal,values:freqValues,step:0.1,increment:0.1,range:$R(0.1,maxFreqVal),
+        onSlide:function(v) {
+          updateFreqInd(v);
+        },
+        onChange:function(v) {
+           var rv = updateFreqInd(v);
+           if (subsItemList1 && subsItemList2) {
+             subsItemList1.setRequestedMaxFrequency(rv);
+             subsItemList2.setRequestedMaxFrequency(rv);
+           }
+        }
+  });
+  
+  function updateFreqInd(v) {
+    v+=0.01;
+    var val = Number(v.toString().substring(0,3));
+    if (val == maxFreqVal) {
+      val = "unlimited";
+    }
+    document.getElementById("nowFrequency").innerHTML = val;
+    return val;
+  }
+ 
+</script>
+
+</body>
+
+</html>
