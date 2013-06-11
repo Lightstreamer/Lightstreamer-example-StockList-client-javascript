@@ -20,6 +20,17 @@ This page uses the JavaScript Client API for Lightstreamer to handle the communi
 The demo includes the following client-side technologies:
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 10 items, subscribed to in MERGE mode feeding a [StaticGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/StaticGrid.html).
 
+<table>
+  <tr>
+    <td style="text-align: left">
+      You can find a demostration hosted in our servers here:&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.lightstreamer.com/demo/StockListDemo_Basic"><img src="http://www.lightstreamer.com/img/demo/screen_basicstocklist.png"></a>
+    </td>
+  </tr>
+</table>
+ 
 StockList Demo
 ---------------
 
@@ -32,6 +43,17 @@ The demo includes the following client-side technologies:
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 15 items, subscribed to in MERGE mode feeding a [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html).
 * For each pop-up window opened, a [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 1 item, subscribed to in MERGE mode feeding both a [StaticGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/StaticGrid.html) and a [Chart](http://www.lightstreamer.com/docs/client_javascript_uni_api/Chart.html).
 
+<table>
+  <tr>
+    <td style="text-align: left">
+      You can find a demostration hosted in our servers here:&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.lightstreamer.com/demo/StockListDemo"><img src="http://www.lightstreamer.com/img/demo/screen_stocklist.png"></a>
+    </td>
+  </tr>
+</table>
+
 Framed StockList Demo
 ---------------------
 
@@ -41,6 +63,17 @@ A LightstreamerClient object is always kept alive in a hidden page. For an expla
 The demo includes the following client-side technologies:
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 15 items, subscribed to in MERGE mode feeding a [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html).
 * For each pop-up window opened, a [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 1 item, subscribed to in MERGE mode feeding both a [StaticGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/StaticGrid.html) and a [Chart](http://www.lightstreamer.com/docs/client_javascript_uni_api/Chart.html).
+
+<table>
+  <tr>
+    <td style="text-align: left">
+      You can find a demostration hosted in our servers here:&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.lightstreamer.com/demo/StockListDemo_Frames"><img src="http://www.lightstreamer.com/img/demo/screen_stocklist.png"></a>
+    </td>
+  </tr>
+</table>
 
 Bandwidth and Frequency Demo
 ----------------------------
@@ -59,6 +92,17 @@ Click on the link under the table (Next/Previous 15) to dynamically switch betwe
 The demo includes the following client-side technologies:
 * Two [Subscriptions](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 15 items each, subscribed to in MERGE mode feeding a [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html) alternately according to the selected list.
 
+<table>
+  <tr>
+    <td style="text-align: left">
+      You can find a demostration hosted in our servers here:&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.lightstreamer.com/demo/BandwidthDemo"><img src="http://www.lightstreamer.com/img/demo/screen_bandwidth.png"></a>
+    </td>
+  </tr>
+</table>
+
 Simple Grid Demo
 ----------------
 
@@ -69,6 +113,18 @@ This technique enables to handle visual grids containing thousands of items with
 The demo includes the following client-side technologies:
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) for each visible row, containing 1 item, subscribed to in MERGE mode. All of the Subscriptions feed the same [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html).
 
+<table>
+  <tr>
+    <td style="text-align: left">
+      You can find a demostration hosted in our servers here:&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.lightstreamer.com/demo/GridDemo"><img src="http://www.lightstreamer.com/img/demo/screen_grid.png"></a>
+    </td>
+  </tr>
+</table>
+
+
 Chart Demo
 ----------
 
@@ -77,6 +133,18 @@ In this chart, the prices for two stocks are normalized to 100 and plotted.
 
 The demo includes the following client-side technologies:
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 2 items, subscribed to in MERGE mode feeding a [StaticGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/StaticGrid.html) and a [Chart](http://www.lightstreamer.com/docs/client_javascript_uni_api/Chart.html).
+
+<table>
+  <tr>
+    <td style="text-align: left">
+      You can find a demostration hosted in our servers here:&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.lightstreamer.com/demo/ChartDemo"><img src="http://www.lightstreamer.com/img/demo/screen_chart.png"></a>
+    </td>
+  </tr>
+</table>
+
 
 Run The Demos
 -------------
