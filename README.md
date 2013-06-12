@@ -13,6 +13,7 @@ This project includes different demos based on Lightstreamer StockList Adapter:
 
 Basic StockList Demo
 ---------------------
+
 <table>
   <tr>
     <td style="text-align: left">
@@ -61,11 +62,11 @@ Framed StockList Demo
 ---------------------
 
 <table border="0">
-  <tr>
-    <td style="text-align: left">
+  <tr border="0">
+    <td style="text-align: left" border="0">
       &nbsp;<a href="http://www.lightstreamer.com/demo/StockListDemo_Frames" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_stocklist.png"></a>&nbsp;
     </td>
-    <td>
+    <td border="0">
       &nbsp;An online demonstration is hosted on our servers at:<br>
       &nbsp;<a href="http://www.lightstreamer.com/demo/StockListDemo_Frames" target="_blank">http://www.lightstreamer.com/demo/StockListDemo_Frames</a>
     </td>
