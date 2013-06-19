@@ -36,7 +36,7 @@ The demo includes the following client-side technologies:
 StockList Demo
 ---------------
 
-<table border="">
+<table>
   <tr>
     <td style="text-align: left">
       &nbsp;<a href="http://www.lightstreamer.com/demo/StockListDemo" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_stocklist.png"></a>&nbsp;
@@ -61,12 +61,12 @@ The demo includes the following client-side technologies:
 Framed StockList Demo
 ---------------------
 
-<table border="0">
-  <tr border="0">
+<table>
+  <tr>
     <td style="text-align: left" border="0">
       &nbsp;<a href="http://www.lightstreamer.com/demo/StockListDemo_Frames" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_stocklist.png"></a>&nbsp;
     </td>
-    <td border="0">
+    <td>
       &nbsp;An online demonstration is hosted on our servers at:<br>
       &nbsp;<a href="http://www.lightstreamer.com/demo/StockListDemo_Frames" target="_blank">http://www.lightstreamer.com/demo/StockListDemo_Frames</a>
     </td>
