@@ -17,12 +17,12 @@ Basic StockList Demo
 <table>
   <tr>
     <td style="text-align: left">
-      &nbsp;<a href="http://www.lightstreamer.com/demo/StockListDemo_Basic" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_basicstocklist.png"></a>&nbsp;
+      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo_Basic" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_basicstocklist.png"></a>&nbsp;
       
     </td>
     <td>
       &nbsp;An online demonstration is hosted on our servers at:<br>
-      &nbsp;<a href="http://www.lightstreamer.com/demo/StockListDemo_Basic" target="_blank">http://www.lightstreamer.com/demo/StockListDemo_Basic</a>
+      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo_Basic" target="_blank">http://demos.lightstreamer.com/StockListDemo_Basic</a>
     </td>
   </tr>
 </table>
