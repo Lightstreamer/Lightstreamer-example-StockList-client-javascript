@@ -138,11 +138,11 @@ Chart Demo
 <table>
   <tr>
     <td style="text-align: left">
-      &nbsp;<a href="http://www.lightstreamer.com/demo/ChartDemo" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_chart.png"></a>&nbsp;
+      &nbsp;<a href="http://demos.lightstreamer.com/ChartDemo/" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_chart.png"></a>&nbsp;
     </td>
     <td>
       &nbsp;An online demonstration is hosted on our servers at:<br>
-      &nbsp;<a href="http://www.lightstreamer.com/demo/ChartDemo" target="_blank">http://www.lightstreamer.com/demo/ChartDemo</a>
+      &nbsp;<a href="http://demos.lightstreamer.com/ChartDemo/" target="_blank">http://demos.lightstreamer.com/ChartDemo/</a>
     </td>
   </tr>
 </table>
