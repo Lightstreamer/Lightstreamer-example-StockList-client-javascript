@@ -86,11 +86,11 @@ Bandwidth and Frequency Demo
 <table>
   <tr>
     <td style="text-align: left">
-      &nbsp;<a href="http://www.lightstreamer.com/demo/BandwidthDemo" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_bandwidth.png"></a>&nbsp;
+      &nbsp;<a href="http://demos.lightstreamer.com/BandwidthDemo" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_bandwidth.png"></a>&nbsp;
     </td>
     <td>
       &nbsp;An online demonstration is hosted on our servers at:<br>
-      &nbsp;<a href="http://www.lightstreamer.com/demo/BandwidthDemo" target="_blank">http://www.lightstreamer.com/demo/BandwidthDemo</a>
+      &nbsp;<a href="http://demos.lightstreamer.com/BandwidthDemo" target="_blank">http://demos.lightstreamer.com/BandwidthDemo</a>
     </td>
   </tr>
 </table>
@@ -116,11 +116,11 @@ Simple Grid Demo
 <table>
   <tr>
     <td style="text-align: left">
-      &nbsp;<a href="http://www.lightstreamer.com/demo/GridDemo" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_grid.png"></a>&nbsp;
+      &nbsp;<a href="http://demos.lightstreamer.com/GridDemo" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_grid.png"></a>&nbsp;
     </td>
     <td>
       &nbsp;An online demonstration is hosted on our servers at:<br>
-      &nbsp;<a href="http://www.lightstreamer.com/demo/GridDemo" target="_blank">http://www.lightstreamer.com/demo/GridDemo</a>
+      &nbsp;<a href="http://demos.lightstreamer.com/GridDemo" target="_blank">http://demos.lightstreamer.com/GridDemo</a>
     </td>
   </tr>
 </table>
