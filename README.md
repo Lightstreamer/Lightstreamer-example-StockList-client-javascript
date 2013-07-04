@@ -64,11 +64,11 @@ Framed StockList Demo
 <table>
   <tr>
     <td style="text-align: left" border="0">
-      &nbsp;<a href="http://www.lightstreamer.com/demo/StockListDemo_Frames" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_stocklist.png"></a>&nbsp;
+      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo_Frames" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_stocklist.png"></a>&nbsp;
     </td>
     <td>
       &nbsp;An online demonstration is hosted on our servers at:<br>
-      &nbsp;<a href="http://www.lightstreamer.com/demo/StockListDemo_Frames" target="_blank">http://www.lightstreamer.com/demo/StockListDemo_Frames</a>
+      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo_Frames" target="_blank">http://demos.lightstreamer.com/StockListDemo_Frames</a>
     </td>
   </tr>
 </table>
