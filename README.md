@@ -1,7 +1,7 @@
 
 # Lightstreamer StockList Demo Client for JavaScript #
 
-This project includes different demos based on Lightstreamer StockList Adapter:
+This project includes different demos based on [Lightstreamer StockList Demo Adapter](https://github.com/Weswit/Lightstreamer-example-Stocklist-adapter-java):
 
 * Basic Stock-List Demo
 * Stock-List Demo
