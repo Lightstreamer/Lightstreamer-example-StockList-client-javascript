@@ -1,4 +1,3 @@
-
 # Lightstreamer StockList Demo Client for JavaScript #
 
 This project includes different demos based on [Lightstreamer StockList Demo Adapter](https://github.com/Weswit/Lightstreamer-example-Stocklist-adapter-java):
@@ -15,7 +14,7 @@ This project includes different demos based on [Lightstreamer StockList Demo Ada
 <table>
   <tr>
     <td style="text-align: left">
-      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo_Basic" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_basicstocklist.png"></a>&nbsp;
+      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo_Basic" target="_blank"><img src="screen_basicstocklist.png"></a>&nbsp;
       
     </td>
     <td>
@@ -36,7 +35,7 @@ The demo includes the following client-side technologies:
 <table>
   <tr>
     <td style="text-align: left">
-      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_stocklist.png"></a>&nbsp;
+      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo" target="_blank"><img src="screen_stocklist.png"></a>&nbsp;
     </td>
     <td>
       &nbsp;An online demonstration is hosted on our servers at:<br>
@@ -60,7 +59,7 @@ The demo includes the following client-side technologies:
 <table>
   <tr>
     <td style="text-align: left" border="0">
-      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo_Frames" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_stocklist.png"></a>&nbsp;
+      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo_Frames" target="_blank"><img src="screen_stocklist.png"></a>&nbsp;
     </td>
     <td>
       &nbsp;An online demonstration is hosted on our servers at:<br>
@@ -81,7 +80,7 @@ The demo includes the following client-side technologies:
 <table>
   <tr>
     <td style="text-align: left">
-      &nbsp;<a href="http://demos.lightstreamer.com/BandwidthDemo" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_bandwidth.png"></a>&nbsp;
+      &nbsp;<a href="http://demos.lightstreamer.com/BandwidthDemo" target="_blank"><img src="screen_bandwidth.png"></a>&nbsp;
     </td>
     <td>
       &nbsp;An online demonstration is hosted on our servers at:<br>
@@ -110,7 +109,7 @@ The demo includes the following client-side technologies:
 <table>
   <tr>
     <td style="text-align: left">
-      &nbsp;<a href="http://demos.lightstreamer.com/GridDemo" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_grid.png"></a>&nbsp;
+      &nbsp;<a href="http://demos.lightstreamer.com/GridDemo" target="_blank"><img src="screen_grid.png"></a>&nbsp;
     </td>
     <td>
       &nbsp;An online demonstration is hosted on our servers at:<br>
@@ -131,7 +130,7 @@ The demo includes the following client-side technologies:
 <table>
   <tr>
     <td style="text-align: left">
-      &nbsp;<a href="http://demos.lightstreamer.com/ChartDemo/" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_chart.png"></a>&nbsp;
+      &nbsp;<a href="http://demos.lightstreamer.com/ChartDemo/" target="_blank"><img src="screen_chart.png"></a>&nbsp;
     </td>
     <td>
       &nbsp;An online demonstration is hosted on our servers at:<br>
