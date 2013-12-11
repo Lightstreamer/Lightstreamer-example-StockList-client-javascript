@@ -125,7 +125,7 @@ This technique enables to handle visual grids containing thousands of items with
 The demo includes the following client-side technologies:
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) for each visible row, containing 1 item, subscribed to in <b>MERGE</b> mode. All of the Subscriptions feed the same [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html).
 
-## Chart Demo ##
+## Chart Demo - HTML Client ##
 
 <table>
   <tr>
