@@ -1,6 +1,6 @@
-# Lightstreamer StockList Demo Client for JavaScript #
+# Lightstreamer - Stock-List Demos - HTML Clients #
 
-This project includes different demos based on [Lightstreamer StockList Demo Adapter](https://github.com/Weswit/Lightstreamer-example-Stocklist-adapter-java):
+This project includes different demos based on [Lightstreamer - Stock-List Demo - Java SE Adapter](https://github.com/Weswit/Lightstreamer-example-Stocklist-adapter-java):
 
 * Basic Stock-List Demo
 * Stock-List Demo
@@ -9,7 +9,7 @@ This project includes different demos based on [Lightstreamer StockList Demo Ada
 * Simple Grid Demo
 * Chart Demo
 
-## Basic StockList Demo ##
+## Basic Stock-List Demo - HTML Client ##
 
 <table>
   <tr>
@@ -30,7 +30,7 @@ This page uses the <b>JavaScript Client API for Lightstreamer</b> to handle the 
 The demo includes the following client-side technologies:
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 10 items, subscribed to in <b>MERGE</b> mode feeding a [StaticGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/StaticGrid.html).
 
-## StockList Demo ##
+## StockList Demo - HTML Client ##
 
 <table>
   <tr>
@@ -54,7 +54,7 @@ The demo includes the following client-side technologies:
 * For each pop-up window opened, a [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 1 item, subscribed to in <b>MERGE</b> mode feeding both a [StaticGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/StaticGrid.html) and a [Chart](http://www.lightstreamer.com/docs/client_javascript_uni_api/Chart.html).
 
 
-## Framed StockList Demo ##
+## Framed StockList Demo - HTML Client ##
 
 <table>
   <tr>
@@ -75,7 +75,7 @@ The demo includes the following client-side technologies:
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 15 items, subscribed to in <b>MERGE</b> mode feeding a [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html).
 * For each pop-up window opened, a [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 1 item, subscribed to in <b>MERGE</b> mode feeding both a [StaticGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/StaticGrid.html) and a [Chart](http://www.lightstreamer.com/docs/client_javascript_uni_api/Chart.html).
 
-## Bandwidth and Frequency Demo ##
+## Bandwidth and Frequency Demo - HTML Client ##
 
 <table>
   <tr>
@@ -104,7 +104,7 @@ Click on the link under the table (Next/Previous 15) to dynamically switch betwe
 The demo includes the following client-side technologies:
 * Two [Subscriptions](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 15 items each, subscribed to in <b>MERGE</b> mode feeding a [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html) alternately according to the selected list.
 
-## Simple Grid Demo ##
+## Simple Grid Demo - HTML Client ##
 
 <table>
   <tr>
@@ -170,16 +170,16 @@ The demos are now ready to be launched. You can find demostrations hosted in our
 
 ## Lightstreamer Adapters needed by these demo clients ##
 
-* [Lightstreamer StockList Demo Adapter](https://github.com/Weswit/Lightstreamer-example-Stocklist-adapter-java)
-* [Lightstreamer Reusable Metadata Adapter in Java](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java)
+* [Lightstreamer - Stock-List Demo - Java SE Adapter](https://github.com/Weswit/Lightstreamer-example-Stocklist-adapter-java)
+* [Lightstreamer - Reusable Metadata Adapters - Java SE Adapter](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java)
 
 ## Similar demo clients that may interest you ##
 
-* [Lightstreamer StockList Demo Client for jQuery](https://github.com/Weswit/Lightstreamer-example-StockList-client-jquery)
-* [Lightstreamer StockList Demo Client for Dojo](https://github.com/Weswit/Lightstreamer-example-StockList-client-dojo)
-* [Lightstreamer StockList Demo Client for Adobe Flex SDK](https://github.com/Weswit/Lightstreamer-example-StockList-client-flex)
-* [Lightstreamer StockList Demo Client for Java SE](https://github.com/Weswit/Lightstreamer-example-StockList-client-java)
-* [Lightstreamer StockList Demo Client for .NET](https://github.com/Weswit/Lightstreamer-example-StockList-client-dotnet)
+* [Lightstreamer - Basic Stock-List Demo - jQuery (jqGrid) Client](https://github.com/Weswit/Lightstreamer-example-StockList-client-jquery)
+* [Lightstreamer - Stock-List Demo - Dojo Toolkit Client](https://github.com/Weswit/Lightstreamer-example-StockList-client-dojo)
+* [Lightstreamer - Basic Stock-List Demo - Flex Client](https://github.com/Weswit/Lightstreamer-example-StockList-client-flex)
+* [Lightstreamer - Stock-List Demo - Java SE Client](https://github.com/Weswit/Lightstreamer-example-StockList-client-java)
+* [Lightstreamer - Stock-List Demo - .NET Client](https://github.com/Weswit/Lightstreamer-example-StockList-client-dotnet)
 
 # Lightstreamer Compatibility Notes #
 
