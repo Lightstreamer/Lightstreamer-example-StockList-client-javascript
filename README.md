@@ -76,7 +76,7 @@ The demo includes the following client-side technologies:
 </table>
 
 The same as the Stock-List Demo, but with a different architecture for the LightstreamerClient integration.<br>
-A LightstreamerClient object is always kept alive in a hidden page. For an explanation of the different deployment strategies please refer to the "JavaScript Client Guide.pdf" document.
+A LightstreamerClient object is always kept alive in a hidden frame. For an explanation of the different deployment strategies please refer to the "[JavaScript Client Guide.pdf](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_client_javascript/doc/JavaScript%20Client%20Guide.pdf)" document.
 
 The demo includes the following client-side technologies:
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 15 items, subscribed to in <b>MERGE</b> mode feeding a [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html).
