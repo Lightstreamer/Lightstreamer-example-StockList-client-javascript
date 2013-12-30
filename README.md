@@ -132,7 +132,7 @@ The demo includes the following client-side functionalities:
 </table>
 
 This demo shows how it is possible to build a "dynamic-subscription grid" by leveraging a Lightstreamer DynaGrid.<br>
-The 30 items of the Stock-List Demo are virtually contained in the grid, but only 5 at a time are displayed. The slider to the right implements a virtual scroll bar. When the table is scrolled, the invisible items are unsubscribed from and the new visible items are subscribed to. To accomplish this, each Lightstreamer Subscription contains one item only and each row on the DynaGrid is fed by a different Lightstreamer Subscription: the granularity of subscriptions and unsubscriptions is at the row level.<br>
+The 30 items of the [Stock-List Demo](https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript#stock-list-demo---html-client) are virtually contained in the grid, but only 5 at a time are displayed. The slider to the right implements a virtual scroll bar. When the table is scrolled, the invisible items are unsubscribed from and the new visible items are subscribed to. To accomplish this, each Lightstreamer Subscription contains one item only and each row on the DynaGrid is fed by a different Lightstreamer Subscription: the granularity of subscriptions and unsubscriptions is at the row level.<br>
 This technique enables to handle visual grids containing thousands of items with a very low impact on both the client side and the server side.
 
 The demo includes the following client-side technologies:
