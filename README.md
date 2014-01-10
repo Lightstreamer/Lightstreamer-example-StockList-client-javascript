@@ -44,17 +44,8 @@ The demo includes the following client-side functionalities:
 ## Framed Stock-List Demo - HTML Client ##
 <!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-framed-stock-list-demo---html-client -->
 
-<table>
-  <tr>
-    <td style="text-align: left" border="0">
-      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo_Frames" target="_blank"><img src="screen_stocklist.png"></a>&nbsp;
-    </td>
-    <td>
-      &nbsp;An online demonstration is hosted on our servers at:<br>
-      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo_Frames" target="_blank">http://demos.lightstreamer.com/StockListDemo_Frames</a>
-    </td>
-  </tr>
-</table>
+![Demo ScreenShot](screen_framedstocklist_large.png)<br>
+An online demonstration is hosted on our servers at: [http://demos.lightstreamer.com/StockListDemo_Frames](http://demos.lightstreamer.com/StockListDemo_Frames)<br>
 
 The same as the [Stock-List Demo](https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript#stock-list-demo---html-client), but with a different architecture for the LightstreamerClient integration.<br>
 A LightstreamerClient object is always kept alive in a hidden frame. For an explanation of the different deployment strategies please refer to the "[JavaScript Client Guide.pdf](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_client_javascript/doc/JavaScript%20Client%20Guide.pdf)" document.
@@ -68,17 +59,8 @@ The demo includes the following client-side functionalities:
 ## Bandwidth and Frequency Demo - HTML Client ##
 <!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-bandwidth-and-frequency-demo---html-client -->
 
-<table>
-  <tr>
-    <td style="text-align: left">
-      &nbsp;<a href="http://demos.lightstreamer.com/BandwidthDemo" target="_blank"><img src="screen_bandwidth.png"></a>&nbsp;
-    </td>
-    <td>
-      &nbsp;An online demonstration is hosted on our servers at:<br>
-      &nbsp;<a href="http://demos.lightstreamer.com/BandwidthDemo" target="_blank">http://demos.lightstreamer.com/BandwidthDemo</a>
-    </td>
-  </tr>
-</table>
+![Demo ScreenShot](screen_bandwidth_large.png)<br>
+An online demonstration is hosted on our servers at: [http://demos.lightstreamer.com/BandwidthDemo](http://demos.lightstreamer.com/BandwidthDemo)<br>
 
 The Bandwidth and Frequency Demo demonstrates two important features of Lightstreamer: bandwidth management and frequency management.<br>
 
@@ -100,17 +82,8 @@ The demo includes the following client-side functionalities:
 ## Simple Grid Demo - HTML Client ##
 <!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-simple-grid-demo---html-client -->
 
-<table>
-  <tr>
-    <td style="text-align: left">
-      &nbsp;<a href="http://demos.lightstreamer.com/GridDemo" target="_blank"><img src="screen_grid.png"></a>&nbsp;
-    </td>
-    <td>
-      &nbsp;An online demonstration is hosted on our servers at:<br>
-      &nbsp;<a href="http://demos.lightstreamer.com/GridDemo" target="_blank">http://demos.lightstreamer.com/GridDemo</a>
-    </td>
-  </tr>
-</table>
+![Demo ScreenShot](screen_grid_large.png)<br>
+An online demonstration is hosted on our servers at: [http://demos.lightstreamer.com/GridDemo](http://demos.lightstreamer.com/GridDemo)<br>
 
 This demo shows how it is possible to build a "dynamic-subscription grid" by leveraging a Lightstreamer DynaGrid.<br>
 The 30 items of the [Stock-List Demo](https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript#stock-list-demo---html-client) are virtually contained in the grid, but only 5 at a time are displayed. The slider to the right implements a virtual scroll bar. When the table is scrolled, the invisible items are unsubscribed from and the new visible items are subscribed to. To accomplish this, each Lightstreamer Subscription contains one item only and each row on the DynaGrid is fed by a different Lightstreamer Subscription: the granularity of subscriptions and unsubscriptions is at the row level.<br>
@@ -124,17 +97,8 @@ The demo includes the following client-side functionalities:
 ## Chart Demo - HTML Client ##
 <!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-chart-demo---html-client -->
 
-<table>
-  <tr>
-    <td style="text-align: left">
-      &nbsp;<a href="http://demos.lightstreamer.com/ChartDemo/" target="_blank"><img src="screen_chart.png"></a>&nbsp;
-    </td>
-    <td>
-      &nbsp;An online demonstration is hosted on our servers at:<br>
-      &nbsp;<a href="http://demos.lightstreamer.com/ChartDemo/" target="_blank">http://demos.lightstreamer.com/ChartDemo/</a>
-    </td>
-  </tr>
-</table>
+![Demo ScreenShot](screen_chart_large.png)<br>
+An online demonstration is hosted on our servers at: [http://demos.lightstreamer.com/ChartDemo](http://demos.lightstreamer.com/ChartDemo)<br>
 
 This demo shows the capability of Lightstreamer to plot some simple real-time streaming charts in pure HTML and JavaScript. This feature is also demonstrated in the pop-up windows of the [Stock-List Demo](https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript#stock-list-demo---html-client). For more sophisticated charts, it is possible to use third-party charting libraries.<br>
 In this chart, the prices for two stocks are normalized to 100 and plotted.
