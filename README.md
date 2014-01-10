@@ -186,7 +186,7 @@ The demos are now ready to be launched. You can find demostrations hosted in our
 
 # See Also #
 
-## Lightstreamer Adapters needed by these demo clients ##
+## Lightstreamer Adapters Needed by These Demo Clients ##
 <!-- START RELATED_ENTRIES -->
 
 * [Lightstreamer - Stock-List Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Stocklist-adapter-java)
