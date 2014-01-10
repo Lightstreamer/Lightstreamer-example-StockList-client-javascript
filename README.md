@@ -36,17 +36,8 @@ The demo includes the following client-side functionalities:
 ## Stock-List Demo - HTML Client ##
 <!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-stock-list-demo---html-client -->
 
-<table>
-  <tr>
-    <td style="text-align: left">
-      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo" target="_blank"><img src="screen_stocklist.png"></a>&nbsp;
-    </td>
-    <td>
-      &nbsp;An online demonstration is hosted on our servers at:<br>
-      &nbsp;<a href="http://demos.lightstreamer.com/StockListDemo" target="_blank">http://demos.lightstreamer.com/StockListDemo</a>
-    </td>
-  </tr>
-</table>
+![Demo ScreenShot](screen_stocklist_large.png)<br>
+An online demonstration is hosted on our servers at: [http://demos.lightstreamer.com/StockListDemo](http://demos.lightstreamer.com/StockListDemo)<br>
 
 This demo shows some further features with respect to the [Basic Stock-List Demo](https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript#basic-stock-list-demo---html-client).<br>
 Click on the stock names to open pop-up windows that display real-time streaming charts. Notice that the maximum update frequency set for the pop-up windows is greater than the frequency set for the main window. The data is resampled by Lightstreamer Server according to the maximum frequency requested by each table (you can easily notice that if you open "Ations Europe").<br>
