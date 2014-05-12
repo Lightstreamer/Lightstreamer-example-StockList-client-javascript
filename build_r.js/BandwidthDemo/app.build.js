@@ -16,7 +16,6 @@
     
     optimizeCss: "standard.keepLines",
     
-    //if using the non-namespaced version of the Lightstreamer library remove the "Lightstreamer/" prefix from LightstreamerClient, Subscription and StatusWidget module names
     paths: {
       "LightstreamerClient": "empty:",
       "Subscription": "empty:",
