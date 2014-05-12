@@ -201,9 +201,10 @@
 
     <script src="js/require.js"></script>
     <script src="js/lightstreamer.js"></script>
+    <script src="index.js"></script>
     <script>
       //////////////// Connect to current host (or localhost) and configure a StatusWidget
-      define("lsClient",["LightstreamerClient","StatusWidget"],function(LightstreamerClient,StatusWidget) {
+      define("js/lsClient",["LightstreamerClient","StatusWidget"],function(LightstreamerClient,StatusWidget) {
         var protocolToUse = document.location.protocol != "file:" ? document.location.protocol : "http:";
         var portToUse = document.location.protocol == "https:" ? "443" : "8080";
         // in accordance with the port configuration in the factory lightstreamer_conf.xml
@@ -221,7 +222,7 @@
     <!-- JavaScript code specific of this application -->  
     <script type="text/javascript">
 
-      require(["lsClient","Subscription","StaticGrid"], 
+      require(["js/lsClient","Subscription","StaticGrid"], 
         function(lsClient,Subscription,StaticGrid) {
         
         var stocksGrid = new StaticGrid("stocks",true);
