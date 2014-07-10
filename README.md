@@ -27,11 +27,15 @@ The demo includes the following client-side functionalities:
 
 <!-- END DESCRIPTION lightstreamer-example-stocklist-client-javascript-basic-stock-list-demo---html-client -->
 
-## Stock-List Demo - HTML Client ##
+## Stock-List Demo - HTML Client
 <!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-stock-list-demo---html-client -->
 
+### Live Demo
+
 [![Demo ScreenShot](screen_stocklist_large.png)](http://demos.lightstreamer.com/StockListDemo)<br>
-An online demonstration is hosted on our servers at: [http://demos.lightstreamer.com/StockListDemo](http://demos.lightstreamer.com/StockListDemo)<br>
+###[![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/StockListDemo)<br>
+
+### Details
 
 This demo shows some further features with respect to the [Basic Stock-List Demo](https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript#basic-stock-list-demo---html-client).<br>
 Click on the stock names to open pop-up windows that display real-time streaming charts. Notice that the maximum update frequency set for the pop-up windows is greater than the frequency set for the main window. The data is resampled by Lightstreamer Server according to the maximum frequency requested by each table (you can easily notice that if you open "Ations Europe").<br>
@@ -44,12 +48,15 @@ The demo includes the following client-side functionalities:
 
 <!-- END DESCRIPTION lightstreamer-example-stocklist-client-javascript-stock-list-demo---html-client -->
 
-
-## Framed Stock-List Demo - HTML Client ##
+## Framed Stock-List Demo - HTML Client
 <!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-framed-stock-list-demo---html-client -->
 
+### Live Demo
+
 [![Demo ScreenShot](screen_framedstocklist_large.png)](http://demos.lightstreamer.com/StockListDemo_Frames)<br>
-An online demonstration is hosted on our servers at: [http://demos.lightstreamer.com/StockListDemo_Frames](http://demos.lightstreamer.com/StockListDemo_Frames)<br>
+###[![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/StockListDemo_Frames)<br>
+
+### Details
 
 The same as the [Stock-List Demo](https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript#stock-list-demo---html-client), but with a different architecture for the LightstreamerClient integration.<br>
 A LightstreamerClient object is always kept alive in a hidden frame. For an explanation of the different deployment strategies please refer to the "[JavaScript Client Guide.pdf](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_client_javascript/doc/JavaScript%20Client%20Guide.pdf)" document.
@@ -60,11 +67,15 @@ The demo includes the following client-side functionalities:
 
 <!-- END DESCRIPTION lightstreamer-example-stocklist-client-javascript-framed-stock-list-demo---html-client -->
 
-## Bandwidth and Frequency Demo - HTML Client ##
+## Bandwidth and Frequency Demo - HTML Client
 <!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-bandwidth-and-frequency-demo---html-client -->
 
+### Live Demo
+
 [![Demo ScreenShot](screen_bandwidth_large.png)](http://demos.lightstreamer.com/BandwidthDemo)<br>
-An online demonstration is hosted on our servers at: [http://demos.lightstreamer.com/BandwidthDemo](http://demos.lightstreamer.com/BandwidthDemo)<br>
+###[![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/BandwidthDemo)<br>
+
+### Details
 
 The Bandwidth and Frequency Demo demonstrates two important features of Lightstreamer: bandwidth management and frequency management.<br>
 
@@ -83,11 +94,15 @@ The demo includes the following client-side functionalities:
 
 <!-- END DESCRIPTION lightstreamer-example-stocklist-client-javascript-bandwidth-and-frequency-demo---html-client -->
 
-## Simple Grid Demo - HTML Client ##
+## Simple Grid Demo - HTML Client
 <!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-simple-grid-demo---html-client -->
 
+### Live Demo
+
 [![Demo ScreenShot](screen_grid_large.png)](http://demos.lightstreamer.com/GridDemo)<br>
-An online demonstration is hosted on our servers at: [http://demos.lightstreamer.com/GridDemo](http://demos.lightstreamer.com/GridDemo)<br>
+###[![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/GridDemo)<br>
+
+### Details
 
 This demo shows how it is possible to build a "dynamic-subscription grid" by leveraging a Lightstreamer DynaGrid.<br>
 The 30 items of the [Stock-List Demo](https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript#stock-list-demo---html-client) are virtually contained in the grid, but only 5 at a time are displayed. The slider to the right implements a virtual scroll bar. When the table is scrolled, the invisible items are unsubscribed from and the new visible items are subscribed to. To accomplish this, each Lightstreamer Subscription contains one item only and each row on the DynaGrid is fed by a different Lightstreamer Subscription: the granularity of subscriptions and unsubscriptions is at the row level.<br>
@@ -98,11 +113,15 @@ The demo includes the following client-side functionalities:
 
 <!-- END DESCRIPTION lightstreamer-example-stocklist-client-javascript-simple-grid-demo---html-client -->
 
-## Chart Demo - HTML Client ##
+## Chart Demo - HTML Client
 <!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-chart-demo---html-client -->
 
+### Live Demo
+
 [![Demo ScreenShot](screen_chart_large.png)](http://demos.lightstreamer.com/ChartDemo)<br>
-An online demonstration is hosted on our servers at: [http://demos.lightstreamer.com/ChartDemo](http://demos.lightstreamer.com/ChartDemo)<br>
+###[![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/ChartDemo)<br>
+
+### Details
 
 This demo shows the capability of Lightstreamer to plot some simple real-time streaming charts in pure HTML and JavaScript. This feature is also demonstrated in the pop-up windows of the [Stock-List Demo](https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript#stock-list-demo---html-client). For more sophisticated charts, it is possible to use third-party charting libraries.<br>
 In this chart, the prices for two stocks are normalized to 100 and plotted.
@@ -112,16 +131,17 @@ The demo includes the following client-side functionalities:
 
 <!-- END DESCRIPTION lightstreamer-example-stocklist-client-javascript-chart-demo---html-client -->
 
-# Deploy #
+## Install
 
-Before you can run the demos of this project some dependencies need to be solved:
+If you want to install a version of one of these demo pointing to your local Lightstreamer Server, follow these steps:
 
--  Get the lightstreamer.js file from the [Lightstreamer 5 Colosseo distribution](http://www.lightstreamer.com/download) 
-   and put it in the src/[demo_name]/js folder of the demo (if that is the case, please create it). Alternatively you can build a lightstreamer.js file from the 
-   [online generator](http://www.lightstreamer.com/distros/Lightstreamer_Allegro-Presto-Vivace_5_0_Colosseo_20120803/Lightstreamer/DOCS-SDKs/sdk_client_javascript/tools/generator.html).
-   In that case be sure to include the LightstreamerClient, Subscription, DynaGrid, StaticGrid, Chart, SimpleChartListener, and StatusWidget modules and to use the "Use AMD" version.
--  Get the require.js file form [requirejs.org](http://requirejs.org/docs/download.html) and put it in the src/[demo_name]/js folder of the demo.
--  This apply only for Bandwidth and Frequency Demo and Simple Grid Demo. Get the zip file from [script.aculo.us](http://script.aculo.us/downloads) and put the prototype.js, scriptaculous.js, and slider.js files in the src/[demo_name]/js/scriptaculous folder of the demo.
+* Note that, as prerequisite, the [Lightstreamer - Stock- List Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Stocklist-adapter-java) has to be deployed on your local Lightstreamer Server instance. Please check out that project and follow the installation instructions provided with it.
+* Launch Lightstreamer Server.
+* Get the lightstreamer.js file from the [Lightstreamer 5 Colosseo distribution](http://www.lightstreamer.com/download) and put it in the src/[demo_name]/js folder of the demo (if that is the case, please create it). Alternatively you can build a lightstreamer.js file from the 
+  [online generator](http://www.lightstreamer.com/distros/Lightstreamer_Allegro-Presto-Vivace_5_1_1_Colosseo_20140310/Lightstreamer/DOCS-SDKs/sdk_client_javascript/tools/generator.html).
+  In that case be sure to include the LightstreamerClient, Subscription, DynaGrid, StaticGrid, Chart, SimpleChartListener, and StatusWidget modules and to use the "Use AMD" version.
+* Get the require.js file form [requirejs.org](http://requirejs.org/docs/download.html) and put it in the src/[demo_name]/js folder of the demo.
+* This apply only for Bandwidth and Frequency Demo and Simple Grid Demo. Get the zip file from [script.aculo.us](http://script.aculo.us/downloads) and put the prototype.js, scriptaculous.js, and slider.js files in the src/[demo_name]/js/scriptaculous folder of the demo.
 
 You can deploy these demos in order to use the Lightstreamer server as Web server or in any external Web Server you are running. 
 If you choose the former case please note that in the <LS_HOME>/pages/demos/ folder there is a copy of some of the src/[demo_name] directories of this project, in other cases please create the folders <LS_HOME>/pages/demos/[demo_name] then copy here the contents of the src/[demo_name] folder of this project.<br>
@@ -130,12 +150,24 @@ The client demos configuration assumes that Lightstreamer Server, Lightstreamer 
 var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"DEMO");
 ```
 in lsClient.js or index.html, depending on the demo, and change it accordingly.<br>
-Anyway the [QUOTE_ADAPTER](https://github.com/Weswit/Lightstreamer-example-Stocklist-adapter-java) and [LiteralBasedProvider](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java) have to be deployed in your local Lightstreamer server instance. The factory configuration of Lightstreamer server already provides this adapter deployed.<br>
+
 The demos are now ready to be launched.
 
-# See Also #
+## Build
 
-## Lightstreamer Adapters Needed by These Demo Clients ##
+The html application can be optionally built, to reduce the number and size of the files to be downloaded by the browser, using [r.js](http://requirejs.org/docs/optimization.html). A ready-made configuration file for the build process of the Chart Demo is available in the build_rjs folder of this project.
+
+The build is configured to use [Google Closure compiler](https://code.google.com/p/closure-compiler/) to minify the files. To run it as is you need to download [rhino](https://developer.mozilla.org/en-US/docs/Rhino) js.jar file, compiler.jar from the closure compiler project and r.js from RequireJS. You also need a [Java Virtual Machine](https://www.java.com/en/download/) installed on your system.
+
+Once ready, from the build_rjs/ChartDemo folder, run
+
+java -cp compiler.jar;js.jar org.mozilla.javascript.tools.shell.Main r.js -o app.build.js
+
+As an alternative it is possible to customize the build file to use [UglifyJS](https://github.com/mishoo/UglifyJS2); in this case it can be built using [node.js](http://nodejs.org/) instead of using the JVM.
+
+## See Also
+
+### Lightstreamer Adapters Needed by These Demo Clients
 <!-- START RELATED_ENTRIES -->
 
 * [Lightstreamer - Stock-List Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Stocklist-adapter-java)
@@ -143,7 +175,7 @@ The demos are now ready to be launched.
 
 <!-- END RELATED_ENTRIES -->
 
-## Related Projects ##
+### Related Projects
 
 * [Lightstreamer - Basic Stock-List Demo - jQuery (jqGrid) Client](https://github.com/Weswit/Lightstreamer-example-StockList-client-jquery)
 * [Lightstreamer - Stock-List Demo - Dojo Toolkit Client](https://github.com/Weswit/Lightstreamer-example-StockList-client-dojo)
@@ -151,6 +183,6 @@ The demos are now ready to be launched.
 * [Lightstreamer - Basic Stock-List Demo - Java SE (Swing) Client](https://github.com/Weswit/Lightstreamer-example-StockList-client-java)
 * [Lightstreamer - Basic Stock-List Demo - .NET Client](https://github.com/Weswit/Lightstreamer-example-StockList-client-dotnet)
 
-# Lightstreamer Compatibility Notes #
+## Lightstreamer Compatibility Notes
 
-- Compatible with Lightstreamer JavaScript Client library version 6.0 or newer.
+* Compatible with Lightstreamer JavaScript Client library version 6.0 or newer.
