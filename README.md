@@ -5,7 +5,6 @@ This project includes different demos based on [Lightstreamer - Stock-List Demo 
 * Basic Stock-List Demo
 * Stock-List Demo
 * Framed Stock-List Demo
-* Bandwidth and Frequency Demo
 * Simple Grid Demo
 * Chart Demo
 
@@ -67,33 +66,6 @@ The demo includes the following client-side functionalities:
 
 <!-- END DESCRIPTION lightstreamer-example-stocklist-client-javascript-framed-stock-list-demo---html-client -->
 
-## Bandwidth and Frequency Demo - HTML Client
-<!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-bandwidth-and-frequency-demo---html-client -->
-
-### Live Demo
-
-[![Demo ScreenShot](screen_bandwidth_large.png)](http://demos.lightstreamer.com/BandwidthDemo)<br>
-###[![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/BandwidthDemo)<br>
-
-### Details
-
-The Bandwidth and Frequency Demo demonstrates two important features of Lightstreamer: bandwidth management and frequency management.<br>
-
-Use the <b>Max Bandwidth</b> slider to dynamically change the maximum bandwidth granted to for the current session. The client will notify the server of the new bandwidth and the server will change the update frequency on the fly, in order to respect the bandwidth limit.
-You can see that with a bandwidth as ridiculous as 0.5 kilobits per seconds, Lightstreamer is still able to deliver updates to the page, thanks to the very optimized network protocol used.<br>
-
-Use the <b>Max Frequency</b> slider to dynamically change the maximum update rate of <b>each item</b> in the Subscription. The client will notify the server of the new frequency limit and the server will change the update frequency on the fly, in order to respect the frequency limit.<br>
-
-You can see how the bandwidth and frequency constraints act on different levels. The bandwidth constraint is applied to the whole session, that is, to the global update flow for this page. On the other hand, the frequency constraint is applied to each row (Item) individually. Both the constraints set an upper bound, which is dynamically managed by Lightstreamer Server.
-Note that thanks to MERGE mode, the updates are not queued and delayed, but resampled and conflated. In other words, when an item has a chance to be updated (based on a round-robin algorithm), it will receive the very latest state available, not an old one.<br>
-
-Click on the link under the table (Next/Previous 15) to dynamically switch between two lists of fifteen items and see how the initial snapshot is loaded still respecting the bandwidth limit.
-
-The demo includes the following client-side functionalities:
-* Two [Subscriptions](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 15 items each, subscribed to in <b>MERGE</b> mode feeding a [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html) alternately according to the selected list.
-
-<!-- END DESCRIPTION lightstreamer-example-stocklist-client-javascript-bandwidth-and-frequency-demo---html-client -->
-
 ## Simple Grid Demo - HTML Client
 <!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-simple-grid-demo---html-client -->
 
@@ -141,7 +113,7 @@ If you want to install a version of one of these demo pointing to your local Lig
   [online generator](http://www.lightstreamer.com/distros/Lightstreamer_Allegro-Presto-Vivace_5_1_1_Colosseo_20140310/Lightstreamer/DOCS-SDKs/sdk_client_javascript/tools/generator.html).
   In that case be sure to include the LightstreamerClient, Subscription, DynaGrid, StaticGrid, Chart, SimpleChartListener, and StatusWidget modules and to use the "Use AMD" version.
 * Get the require.js file form [requirejs.org](http://requirejs.org/docs/download.html) and put it in the src/[demo_name]/js folder of the demo.
-* This apply only for Bandwidth and Frequency Demo and Simple Grid Demo. Get the zip file from [script.aculo.us](http://script.aculo.us/downloads) and put the prototype.js, scriptaculous.js, and slider.js files in the src/[demo_name]/js/scriptaculous folder of the demo.
+* This apply only for Simple Grid Demo. Get the zip file from [script.aculo.us](http://script.aculo.us/downloads) and put the prototype.js, scriptaculous.js, and slider.js files in the src/[demo_name]/js/scriptaculous folder of the demo.
 
 You can deploy these demos in order to use the Lightstreamer server as Web server or in any external Web Server you are running. 
 If you choose the former case please note that in the <LS_HOME>/pages/demos/ folder there is a copy of some of the src/[demo_name] directories of this project, in other cases please create the folders <LS_HOME>/pages/demos/[demo_name] then copy here the contents of the src/[demo_name] folder of this project.<br>
