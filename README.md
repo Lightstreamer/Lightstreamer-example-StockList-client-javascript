@@ -37,7 +37,7 @@ The demo includes the following client-side functionalities:
 ### Details
 
 This demo shows some further features with respect to the [Basic Stock-List Demo](https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript#basic-stock-list-demo---html-client).<br>
-Click on the stock names to open pop-up windows that display real-time streaming charts. Notice that the maximum update frequency set for the pop-up windows is greater than the frequency set for the main window. The data is resampled by Lightstreamer Server according to the maximum frequency requested by each table (you can easily notice that if you open "Ations Europe").<br>
+Click on the stock names to open pop-up windows that display real-time streaming charts. Notice that the maximum update frequency set for the pop-up windows is greater than the frequency set for the main window. The data is resampled by Lightstreamer Server, according to the maximum frequency requested by each table (you can easily notice that if you open "Ations Europe").<br>
 Click on the link under the table (Next/Previous 15) to dynamically switch between two lists of fifteen items, without losing previously opened pop-ups. If you open the same demo in different browser windows, you will see slightly different values for the most updated stocks. Again, this behavior shows how the data resampling is done in real-time on a per-window basis.
 Notice that a large portion of the JavaScript front-end code is devoted to client-side formatting operations.
 
@@ -58,7 +58,7 @@ The demo includes the following client-side functionalities:
 ### Details
 
 The same as the [Stock-List Demo](https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript#stock-list-demo---html-client), but with a different architecture for the LightstreamerClient integration.<br>
-A LightstreamerClient object is always kept alive in a hidden frame. For an explanation of the different deployment strategies please refer to the "[JavaScript Client Guide.pdf](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_client_javascript/doc/JavaScript%20Client%20Guide.pdf)" document.
+A LightstreamerClient object is always kept alive in a hidden frame. For an explanation of the different deployment strategies, please refer to the "[JavaScript Client Guide.pdf](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_client_javascript/doc/JavaScript%20Client%20Guide.pdf)" document.
 
 The demo includes the following client-side functionalities:
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 15 items, subscribed to in <b>MERGE</b> mode feeding a [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html).
@@ -105,19 +105,19 @@ The demo includes the following client-side functionalities:
 
 ## Install
 
-If you want to install a version of one of these demo pointing to your local Lightstreamer Server, follow these steps:
+If you want to install a version of one of these demos pointing to your local Lightstreamer Server, follow these steps:
 
 * Note that, as prerequisite, the [Lightstreamer - Stock- List Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Stocklist-adapter-java) has to be deployed on your local Lightstreamer Server instance. Please check out that project and follow the installation instructions provided with it.
 * Launch Lightstreamer Server.
-* Get the `lightstreamer.js` file from the [Lightstreamer 5 Colosseo distribution](http://www.lightstreamer.com/download) and put it in the `src/[demo_name]/js` folder of the demo (if that is the case, please create it). Alternatively you can build a `lightstreamer.js` file from the 
+* Get the `lightstreamer.js` file from the [Lightstreamer 5 Colosseo distribution](http://www.lightstreamer.com/download) and put it in the `src/[demo_name]/js` folder of the demo (if that is the case, please create it). Alternatively, you can build a `lightstreamer.js` file from the 
   [online generator](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_client_javascript/tools/generator.html).
-  In that case be sure to include the LightstreamerClient, Subscription, DynaGrid, StaticGrid, Chart, SimpleChartListener, and StatusWidget modules and to use the "Use AMD" version.
+  In that case, be sure to include the LightstreamerClient, Subscription, DynaGrid, StaticGrid, Chart, SimpleChartListener, and StatusWidget modules and to use the "Use AMD" version.
 * Get the `require.js` file form [requirejs.org](http://requirejs.org/docs/download.html) and put it in the `src/[demo_name]/js` folder of the demo.
-* This apply only for Simple Grid Demo. Get the zip file from [script.aculo.us](http://script.aculo.us/downloads) and put the `prototype.js`, `scriptaculous.js`, and `slider.js` files in the `src/[demo_name]/js/scriptaculous` folder of the demo.
+* This applies only for Simple Grid Demo. Get the zip file from [script.aculo.us](http://script.aculo.us/downloads) and put the `prototype.js`, `scriptaculous.js`, and `slider.js` files in the `src/[demo_name]/js/scriptaculous` folder of the demo.
 
-You can deploy these demos in order to use the Lightstreamer server as Web server or in any external Web Server you are running. 
-If you choose the former case please note that in the `<LS_HOME>/pages/demos/` folder there is a copy of some of the `src/[demo_name]` directories of this project, in other cases please create the folders `<LS_HOME>/pages/demos/[demo_name]` then copy here the contents of the `src/[demo_name]` folder of this project.<br>
-The client demos configuration assumes that Lightstreamer Server, Lightstreamer Adapters and this client are launched on the same machine. If you need to targeting a different Lightstreamer server please search this line:
+You can deploy these demos to use the Lightstreamer server as Web server or in any external Web Server you are running. 
+If you choose the former case, please note that in the `<LS_HOME>/pages/demos/` folder, there is a copy of some of the `src/[demo_name]` directories of this project, in other cases, please create the folders `<LS_HOME>/pages/demos/[demo_name]` then copy here the contents of the `src/[demo_name]` folder of this project.<br>
+The client demos configuration assumes that Lightstreamer Server, Lightstreamer Adapters, and this client are launched on the same machine. If you need to target a different Lightstreamer server, please search this line:
 ```js
 var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"DEMO");
 ```
@@ -129,7 +129,7 @@ The demos are now ready to be launched.
 
 The html applications can be optionally built, to reduce the number and size of the files to be downloaded by the browser, using [r.js](http://requirejs.org/docs/optimization.html). A ready-made configuration file for the build process of the Chart Demo is available in the `build_r.js` folder of this project.
 
-The build is configured to use [Google Closure compiler](https://code.google.com/p/closure-compiler/) to minify the files. To run it as is you need to download [rhino](https://developer.mozilla.org/en-US/docs/Rhino) `js.jar` file, `compiler.jar` from the closure compiler project and `r.js` from RequireJS. You also need a [Java Virtual Machine](https://www.java.com/en/download/) installed on your system.
+The build is configured to use [Google Closure compiler](https://code.google.com/p/closure-compiler/) to minify the files. To run it as-is, you need to download [rhino](https://developer.mozilla.org/en-US/docs/Rhino) `js.jar` file, `compiler.jar` from the closure compiler project and `r.js` from RequireJS. You also need a [Java Virtual Machine](https://www.java.com/en/download/) installed on your system.
 
 Once ready, from the `build_r.js/ChartDemo` folder, run
 
@@ -137,7 +137,7 @@ Once ready, from the `build_r.js/ChartDemo` folder, run
 java -cp compiler.jar;js.jar org.mozilla.javascript.tools.shell.Main r.js -o app.build.js
 ```
 
-As an alternative it is possible to customize the build file to use [UglifyJS](https://github.com/mishoo/UglifyJS2); in this case it can be built using [node.js](http://nodejs.org/) instead of using the JVM.
+As an alternative, it is possible to customize the build file to use [UglifyJS](https://github.com/mishoo/UglifyJS2); in this case, it can be built using [node.js](http://nodejs.org/) instead of using the JVM.
 
 ## See Also
 
