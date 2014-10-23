@@ -58,7 +58,7 @@ The demo includes the following client-side functionalities:
 ### Details
 
 The same as the [Stock-List Demo](https://github.com/Weswit/Lightstreamer-example-StockList-client-javascript#stock-list-demo---html-client), but with a different architecture for the LightstreamerClient integration.<br>
-A LightstreamerClient object is always kept alive in a hidden frame. For an explanation of the different deployment strategies, please refer to the "[JavaScript Client Guide.pdf](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_client_javascript/doc/JavaScript%20Client%20Guide.pdf)" document.
+A LightstreamerClient object is always kept alive in a hidden frame. For an explanation of the different deployment strategies, please refer to the "[JavaScript Client Guide.pdf](http://www.lightstreamer.com/client_javascript_base/JavaScript%20Client%20Guide.pdf)" document.
 
 The demo includes the following client-side functionalities:
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 15 items, subscribed to in <b>MERGE</b> mode feeding a [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html).
@@ -110,7 +110,7 @@ If you want to install a version of one of these demos pointing to your local Li
 * Note that, as prerequisite, the [Lightstreamer - Stock- List Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Stocklist-adapter-java) has to be deployed on your local Lightstreamer Server instance. Please check out that project and follow the installation instructions provided with it.
 * Launch Lightstreamer Server.
 * Get the `lightstreamer.js` file from the [Lightstreamer 5 Colosseo distribution](http://www.lightstreamer.com/download) and put it in the `src/[demo_name]/js` folder of the demo (if that is the case, please create it). Alternatively, you can build a `lightstreamer.js` file from the 
-  [online generator](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_client_javascript/tools/generator.html).
+  [online generator](http://www.lightstreamer.com/docs/client_javascript_tools/generator.html).
   In that case, be sure to include the LightstreamerClient, Subscription, DynaGrid, StaticGrid, Chart, SimpleChartListener, and StatusWidget modules and to use the "Use AMD" version.
 * Get the `require.js` file form [requirejs.org](http://requirejs.org/docs/download.html) and put it in the `src/[demo_name]/js` folder of the demo.
 * This applies only for Simple Grid Demo. Get the zip file from [script.aculo.us](http://script.aculo.us/downloads) and put the `prototype.js`, `scriptaculous.js`, and `slider.js` files in the `src/[demo_name]/js/scriptaculous` folder of the demo.
