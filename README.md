@@ -58,7 +58,7 @@ The demo includes the following client-side functionalities:
 ### Details
 
 The same as the [Stock-List Demo](https://github.com/Lightstreamer/Lightstreamer-example-StockList-client-javascript#stock-list-demo---html-client), but with a different architecture for the LightstreamerClient integration.<br>
-A LightstreamerClient object is always kept alive in a hidden frame. For an explanation of the different deployment strategies, please refer to the "[JavaScript Client Guide.pdf](http://www.lightstreamer.com/client_javascript_base/JavaScript%20Client%20Guide.pdf)" document.
+A LightstreamerClient object is always kept alive in a hidden frame. For an explanation of the different deployment strategies, please refer to the "[Web Client Guide.pdf](http://www.lightstreamer.com/client_javascript_base/Web%20Client%20Guide.pdf)" document.
 
 The demo includes the following client-side functionalities:
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 15 items, subscribed to in <b>MERGE</b> mode feeding a [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html).
