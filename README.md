@@ -159,4 +159,4 @@ As an alternative, it is possible to customize the build file to use [UglifyJS](
 
 ## Lightstreamer Compatibility Notes
 
-* Compatible with Lightstreamer JavaScript Client library version 6.0 or newer.
+* Compatible with Lightstreamer JavaScript Client library version 7.0 or newer.
