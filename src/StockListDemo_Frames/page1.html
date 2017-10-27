@@ -100,14 +100,14 @@
 //////////////// Connect to current host (or localhost) and configure a StatusWidget
   var hostToUse = document.location.protocol == "file:" ? "http://localhost:8080" : document.location.protocol+"//"+document.location.hostname+(document.location.port?":"+document.location.port:"");
 
-  define("lsClient_1",["LightstreamerClient","StatusWidget"],function(LightstreamerClient,StatusWidget) {
+  define("lsClient_1",["LightstreamerClient","StatusWidget","ConnectionSharing"],function(LightstreamerClient,StatusWidget,ConnectionSharing) {
     var lsClient_1 = new LightstreamerClient(hostToUse,"DEMO");
     
     if ( document.location.protocol == "file:") {
-      lsClient_1.connectionSharing.enableSharing("DemoCommonConnection", "ATTACH", "CREATE");
+	  lsClient_1.enableSharing(new ConnectionSharing("DemoCommonConnection", "ATTACH", "CREATE"));
     } else {
       // Please note the "WAIT" parameter in this case.
-      lsClient_1.connectionSharing.enableSharing("DemoCommonConnection", "ATTACH", "WAIT");
+	  lsClient_1.enableSharing(new ConnectionSharing("DemoCommonConnection", "ATTACH", "WAIT"));
     }
     lsClient_1.addListener(new StatusWidget("left", "0px", true));
     lsClient_1.connect();
