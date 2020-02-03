@@ -3,7 +3,7 @@
 <!--
   LIGHTSTREAMER - www.lightstreamer.com
   Stock-List Demo
-  
+
   Copyright (c) Lightstreamer Srl
 
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,11 +30,18 @@
 <body vlink="#6c21b1" link="#0000ee" bgcolor="#ffffff" bottommargin="0" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <a href="https://github.com/Lightstreamer/Lightstreamer-example-StockList-client-javascript"><img style="position: absolute; top: 0; right: 0; border: 0; z-index:1" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 <div id="wrap">
-  <img border="0" src="images/header.png" usemap="#header.gif" width="796" height="161" alt="Please note: these menus are not active" />
-  <map name="header.gif"><area shape="rect" coords="0,0,205,62" href="http://www.lightstreamer.com" target="_blank"></map>
+  <table width="790" border="0">
+    <tr>
+      <td><a href="http://www.lightstreamer.com" target="_blank">
+        <img src="images/logo.png" alt="LIGHTSTREAMER" hspace="0" border="0" /></a></td>
+      <td class="demoTitle">STOCK-LIST DEMO</td>
+    </tr>
+  </table>
+
+  <br />
 
   <!-- stocks table -->
-  <table cellpadding="2" cellspacing="0" width="790" border="0" > 
+  <table cellpadding="2" cellspacing="0" width="790" border="0" >
    <tr class="tabletitle">
       <td nowrap id="col_stock_name" width="148" style="text-align: left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="col_stock_name_s" onclick="changeSort('stock_name');return false;" class="tabletitle">Name</a>
         <img width="10" src="images/spacer.gif" id="img_stock_name" /></td>
@@ -62,7 +69,7 @@
       <td nowrap id="col_open_price" width="50"><a href="#" id="col_open_price_s" onclick="changeSort('open_price');return false;" class="tabletitle">Open</a>
         <img width="10" src="images/spacer.gif" id="img_open_price" /></td>
     </tr>
-    
+
     <tr id="stocks"  data-source="lightstreamer" class="lscoldA" border="0" >
       <td nowrap style="text-align: left">
         <a href="#" data-source="lightstreamer" data-field="click" data-update="onclick">
@@ -72,7 +79,7 @@
       </td>
       <td><div data-source="lightstreamer" data-field="last_price">-</div></td>
       <td><div data-source="lightstreamer" data-field="time">-</div></td>
-      <td> 
+      <td>
         <div>
           <img data-source="lightstreamer" data-field="arrow" data-update="src" src="images/spacer.gif" width="20" height="8" border="0">
         </div>
@@ -87,7 +94,7 @@
       <td><div data-source="lightstreamer" data-field="ref_price">-</div></td>
       <td><div data-source="lightstreamer" data-field="open_price">-</div></td>
     </tr>
-    
+
     <tr>
       <td class="disc">Simulated market data.</td>
       <td colspan="12" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; color: #000000; background: #ffffff; font-weight: bold; text-align: right">
@@ -100,10 +107,10 @@
   <br />
   <p class="note">
     <b>WHAT YOU CAN DO</b><br />
-    - Click on the stock names to open pop-up windows with streaming charts (Ations 
+    - Click on the stock names to open pop-up windows with streaming charts (Ations
 	Europe is the fastest).<br />
     - Click on &quot;Next 15&quot; / &quot;Previous 15&quot; at the bottom to switch the tables.<br />
-    - Click on any table title to SORT on different columns (each click inverts the 
+    - Click on any table title to SORT on different columns (each click inverts the
   sort direction and the third click disables sorting).
   </p>
 </div>
@@ -131,7 +138,7 @@
   var styleH = "lshot";
   var styleC = "lscold";
   var dynaGrid = null;
-  
+
   //////////////// Grid Sort Management
 
   var initialSort = "stock_name";
@@ -169,18 +176,18 @@
     } else {
       if (sortOn == "time" || sortOn == "stock_name") {
         dynaGrid.setSort(sortOn, direction);
-      } else { 
+      } else {
         dynaGrid.setSort(sortOn, direction, true, false);
       }
     }
   }
-  
-  require(["js/lsClient","Subscription","DynaGrid"], 
+
+  require(["js/lsClient","Subscription","DynaGrid"],
     function(lsClient,Subscription,DynaGrid) {
-    
+
     dynaGrid = new DynaGrid("stocks",true);
     var cellList = dynaGrid.extractFieldList()
-    
+
     // dynaGrid.setSort("stock_name");
     changeSort("stock_name");
     dynaGrid.setNodeTypes(["div","span","img","a"]);
@@ -201,7 +208,7 @@
         }
 
         if (info.getChangedFieldValue("item_status") == "inactive") {
-          //possible if testing the JMS version of the Data Adapter 
+          //possible if testing the JMS version of the Data Adapter
           //if it happens we want all the cells to be highlighted in grey;
           //first we force the highlighting on every cell
           forceHighlight(info,true,cellList);
@@ -212,16 +219,16 @@
 
           if ((info.getChangedFieldValue("item_status") == "active" && dynaGrid.getValue(key,"item_status") == "inactive")) {
             //possible if testing the JMS version of the Data Adapter
-            //so we force again the highlighting on every cell to restore 
+            //so we force again the highlighting on every cell to restore
             //the "active" color
             forceHighlight(info,true,cellList);
 
             info.setAttribute("#000000","#000000","color");
             info.setCellAttribute("stock_name","#000080","#000080","color");
           }
-        
+
           // illumination color
-          // choose the backgroundColor                
+          // choose the backgroundColor
           var lastPrice = info.getChangedFieldValue("last_price");
           if (lastPrice !== null) {
             var prevPrice = dynaGrid.getValue(key,"last_price");
@@ -233,7 +240,7 @@
           } else {
             info.setAttribute(greenColor,null,"backgroundColor");
           }
-          
+
           //put arrow and handle change style
           var pctChange = info.getChangedFieldValue("pct_change");
           if (pctChange !== null) {
@@ -242,20 +249,20 @@
             if (pctChange.indexOf("-") > -1) {
               info.setCellValue("arrow",imgDown);
               info.setCellAttribute("arrow",null,null,"backgroundColor");
-              
+
               info.setCellAttribute("pct_change","black",hotTxtCol,"color");
               info.setCellValue("pct_change",pctChange);
             } else {
               info.setCellValue("arrow",imgUp);
               info.setCellAttribute("arrow",null,null,"backgroundColor");
-                      
+
               info.setCellAttribute("pct_change","black",hotTxtCol,"color");
               info.setCellValue("pct_change","+"+pctChange);
-  
+
              }
             info.setCellAttribute("pct_change","bold","bold","fontWeight");
           }
-          
+
           // format decimal fields.
           formatDecimalField(info, "last_price");
           formatDecimalField(info, "bid");
@@ -264,7 +271,7 @@
           formatDecimalField(info, "max");
           formatDecimalField(info, "ref_price");
           formatDecimalField(info, "open_price");
-          
+
           // format the timestamp
           var time = info.getChangedFieldValue("time");
           if (time != null) {
@@ -275,27 +282,27 @@
 
       }
     });
-    
+
     subsItemList1 = new Subscription("MERGE",itemList1,fieldsList);
     subsItemList1.addListener(dynaGrid);
     subsItemList1.setDataAdapter("QUOTE_ADAPTER");
     subsItemList1.setRequestedSnapshot("yes");
     subsItemList1.setRequestedMaxFrequency(1);
-    
+
     subsItemList2 = new Subscription("MERGE",itemList2,fieldsList);
     subsItemList2.addListener(dynaGrid);
     subsItemList2.setDataAdapter("QUOTE_ADAPTER");
     subsItemList2.setRequestedSnapshot("yes");
     subsItemList2.setRequestedMaxFrequency(1);
-    
-    lsClient.subscribe(subsItemList1);  
-    //lsClient.subscribe(subsItemList2); //we may also subscribe both lists simultaneously  
+
+    lsClient.subscribe(subsItemList1);
+    //lsClient.subscribe(subsItemList2); //we may also subscribe both lists simultaneously
     window.lsClient = lsClient;
-    
+
     //enable switch
     document.getElementById("switchP2").style.display = "";
 
-  }); 
+  });
 
 //////////////// Stock Details Popup Management
   function openPopup(item) {
@@ -305,21 +312,21 @@
   }
 
 //////////////// Stock Grid Management
-  
+
 
   function changePage(groupNumber) {
     if (groupNumber == 1) {
       pageNumber = 1;
       document.getElementById("switchP1").style.display = "none";
       document.getElementById("switchP2").style.display = "";
-      lsClient.unsubscribe(subsItemList2); 
-      lsClient.subscribe(subsItemList1); 
+      lsClient.unsubscribe(subsItemList2);
+      lsClient.subscribe(subsItemList1);
     } else if (groupNumber == 2) {
       pageNumber = 2;
       document.getElementById("switchP1").style.display = "";
       document.getElementById("switchP2").style.display = "none";
-      lsClient.unsubscribe(subsItemList1); 
-      lsClient.subscribe(subsItemList2); 
+      lsClient.unsubscribe(subsItemList1);
+      lsClient.subscribe(subsItemList2);
     }
   }
 

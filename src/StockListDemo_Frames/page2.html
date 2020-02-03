@@ -3,7 +3,7 @@
 <!--
   LIGHTSTREAMER - www.lightstreamer.com
   Stock-List Demo - Frame Version
-  
+
   Copyright (c) Lightstreamer Srl
 
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,8 +30,15 @@
 <body vlink="#6c21b1" link="#0000ee" bgcolor="#ffffff" bottommargin="0" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
   <a href="https://github.com/Lightstreamer/Lightstreamer-example-StockList-client-javascript" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0; z-index:1" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
   <div id="wrap">
-    <img border="0" src="images/header.png" usemap="#header.gif" width="796" height="161" alt="Please note: these menus are not active" />
-    <map name="header.gif"><area shape="rect" coords="0,0,205,62" href="http://www.lightstreamer.com" target="_blank"></map>
+    <table width="790" border="0">
+      <tr>
+        <td><a href="http://www.lightstreamer.com" target="_blank">
+          <img src="images/logo.png" alt="LIGHTSTREAMER" hspace="0" border="0" /></a></td>
+        <td class="demoTitle">STOCK-LIST DEMO</td>
+      </tr>
+    </table>
+
+    <br />
 
     <!-- stocks table -->
     <table cellspacing="0" cellpadding="2" width="790" border="0" >
@@ -59,7 +66,7 @@
         </td>
         <td><div data-source="lightstreamer" data-field="last_price">-</div></td>
         <td><div data-source="lightstreamer" data-field="time">-</div></td>
-        <td> 
+        <td>
           <div>
             <img data-source="lightstreamer" data-field="arrow" data-update="src" src="images/spacer.gif" width="20" height="8" border="0">
           </div>
@@ -85,14 +92,14 @@
     <br />
     <p class="note">
       <b>WHAT YOU CAN DO</b><br />
-      - Click on the stock names to open pop-up windows with streaming charts (Ations 
+      - Click on the stock names to open pop-up windows with streaming charts (Ations
     Europe is the fastest).<br />
       - Click on &quot;Next Page&quot; / &quot;Previous Page&quot; at the bottom to switch the page.
     </p>
   </div>
-  
-<script src="js/require.js"></script>  
-<script src="js/lightstreamer.js"></script>  
+
+<script src="js/require.js"></script>
+<script src="js/lightstreamer.js"></script>
 <script src="js/format.js" type="text/javascript"></script>
 <script>
 //////////////// Connect to current host (or localhost) and configure a StatusWidget
@@ -100,7 +107,7 @@
 
   define("lsClient_2",["LightstreamerClient","StatusWidget","ConnectionSharing"],function(LightstreamerClient,StatusWidget,ConnectionSharing) {
     var lsClient_2 = new LightstreamerClient(hostToUse,"DEMO");
-    
+
     if ( document.location.protocol == "file:") {
       lsClient_2.enableSharing(new ConnectionSharing("DemoCommonConnection", "ATTACH", "CREATE"));
     } else {
@@ -109,12 +116,12 @@
     }
     lsClient_2.addListener(new StatusWidget("left", "0px", true));
     lsClient_2.connect();
-      
+
     return lsClient_2;
   });
 </script>
 <script type="text/javascript">
-  
+
 //////////////// Stock Details Popup Management
 
   function openPopup(item) {
@@ -122,12 +129,12 @@
     if (doFade) {
       fadeStr = "&fade=ON";
     }
-    
+
     wdt = window.open("popup.html?item=" + item + fadeStr, "SLDpopup_" + unique + "_" + item, "width=575,height=238,history=0,resizable,status=1,menubar=1");
     wdt.focus();
     return false;
   }
-  
+
 //////////////// Stock Table Management
 
   var fieldsList = ["last_price", "time", "pct_change", "bid_quantity", "bid", "ask", "ask_quantity", "min", "max", "ref_price", "open_price", "stock_name", "item_status"];
@@ -141,9 +148,9 @@
   var styleH = "lshot";
   var styleC = "lscold";
 
-  require(["lsClient_2","Subscription","DynaGrid"], 
+  require(["lsClient_2","Subscription","DynaGrid"],
     function(lsClient_2,Subscription,DynaGrid) {
-    
+
     var dynaGrid = new DynaGrid("stocks",true);
     dynaGrid.setSort("stock_name");
     dynaGrid.setNodeTypes(["div","span","img","a"]);
@@ -162,14 +169,14 @@
         } else if (doFade) {
           info.setHotToColdTime(300);
         }
-        
+
         var cold = (key.substring(4) % 2 == 1) ? "#eeeeee" : "#ddddee";
         domNode.style.backgroundColor = cold;
-        
-        
-        
+
+
+
         if (info.getChangedFieldValue("item_status") == "inactive") {
-          //possible if testing the JMS version of the Data Adapter 
+          //possible if testing the JMS version of the Data Adapter
           //if it happens we want all the cells to be highlighted in grey;
           //first we force the highlighting on every cell
           forceHighlight(info,true,cellList);
@@ -180,17 +187,17 @@
 
           if ((info.getChangedFieldValue("item_status") == "active" && dynaGrid.getValue(key,"item_status") == "inactive")) {
             //possible if testing the JMS version of the Data Adapter
-            //so we force again the highlighting on every cell to restore 
+            //so we force again the highlighting on every cell to restore
             //the "active" color
             forceHighlight(info,true,cellList);
 
             info.setAttribute("#000000","#000000","color");
             info.setCellAttribute("stock_name","#000080","#000080","color");
           }
-        
-        
+
+
           // illumination color
-          // choose the backgroundColor                
+          // choose the backgroundColor
           var lastPrice = info.getChangedFieldValue("last_price");
           if (lastPrice !== null) {
             var prevPrice = dynaGrid.getValue(key,"last_price");
@@ -202,7 +209,7 @@
           } else {
             info.setAttribute(greenColor,cold,"backgroundColor");
           }
-          
+
           //put arrow and handle change style
           var pctChange = info.getChangedFieldValue("pct_change");
           if (pctChange !== null) {
@@ -211,20 +218,20 @@
             if (pctChange.indexOf("-") > -1) {
               info.setCellValue("arrow",imgDown);
               info.setCellAttribute("arrow",cold,cold,"backgroundColor");
-              
+
               info.setCellAttribute("pct_change","black",hotTxtCol,"color");
               info.setCellValue("pct_change",pctChange);
             } else {
               info.setCellValue("arrow",imgUp);
               info.setCellAttribute("arrow",cold,cold,"backgroundColor");
-                      
+
               info.setCellAttribute("pct_change","black",hotTxtCol,"color");
               info.setCellValue("pct_change","+"+pctChange);
-  
+
              }
             info.setCellAttribute("pct_change","bold","bold","fontWeight");
           }
-          
+
           // format decimal fields.
           formatDecimalField(info, "last_price");
           formatDecimalField(info, "bid");
@@ -233,7 +240,7 @@
           formatDecimalField(info, "max");
           formatDecimalField(info, "ref_price");
           formatDecimalField(info, "open_price");
-          
+
           // format the timestamp
           var time = info.getChangedFieldValue("time");
           if (time != null) {
@@ -241,18 +248,18 @@
           }
 
         }
-       
+
       }
     });
-    
+
     subsItemList2 = new Subscription("MERGE",itemList,fieldsList);
     subsItemList2.addListener(dynaGrid);
     subsItemList2.setDataAdapter("QUOTE_ADAPTER");
     subsItemList2.setRequestedSnapshot("yes");
     subsItemList2.setRequestedMaxFrequency(1);
-    
-    lsClient_2.subscribe(subsItemList2);  
-  }); 
+
+    lsClient_2.subscribe(subsItemList2);
+  });
 
 
 </script>

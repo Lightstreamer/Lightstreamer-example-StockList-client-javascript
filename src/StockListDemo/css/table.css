@@ -16,6 +16,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+.demoTitle {
+  font-family: Verdana, Arial, Helvetica, Sans-serif;
+  font-size: 9pt;
+  color: #000000;
+  font-weight: bold;
+  text-align: right;
+}
 .tabletitle {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 7pt;
@@ -40,14 +47,14 @@
   text-align: left;
   margin-top: 0px;
 }
-.disc { 
+.disc {
 	margin-top: 5px;
-  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 7pt;
-	color: #000000; 
+	color: #000000;
 	background: #ffffff;
-	font-weight: normal; 
-	text-align: left; 
+	font-weight: normal;
+	text-align: left;
 }
 .stocknameA {
   font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -114,7 +121,7 @@
 }
 tr:nth-child(2n+2) {
   background: #ddddee;
-} 
+}
 tr:nth-child(2n+3) {
   background: #eeeeee;
 }
