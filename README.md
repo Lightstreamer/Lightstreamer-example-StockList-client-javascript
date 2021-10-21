@@ -31,8 +31,8 @@ The demo includes the following client-side functionalities:
 
 ### Live Demo
 
-[![Demo ScreenShot](screen_stocklist_large.png)](http://demos.lightstreamer.com/StockListDemo)<br>
-### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/StockListDemo)<br>
+[![Demo ScreenShot](screen_stocklist_large.png)](https://demos.lightstreamer.com/StockListDemo/)<br>
+### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](https://demos.lightstreamer.com/StockListDemo/)<br>
 
 ### Details
 
@@ -52,8 +52,8 @@ The demo includes the following client-side functionalities:
 
 ### Live Demo
 
-[![Demo ScreenShot](screen_framedstocklist_large.png)](http://demos.lightstreamer.com/StockListDemo_Frames)<br>
-### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/StockListDemo_Frames)<br>
+[![Demo ScreenShot](screen_framedstocklist_large.png)](https://demos.lightstreamer.com/StockListDemo_Frames/)<br>
+### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](https://demos.lightstreamer.com/StockListDemo_Frames/)<br>
 
 ### Details
 
@@ -71,8 +71,8 @@ The demo includes the following client-side functionalities:
 
 ### Live Demo
 
-[![Demo ScreenShot](screen_grid_large.png)](http://demos.lightstreamer.com/GridDemo)<br>
-### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/GridDemo)<br>
+[![Demo ScreenShot](screen_grid_large.png)](https://demos.lightstreamer.com/GridDemo/)<br>
+### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](https://demos.lightstreamer.com/GridDemo/)<br>
 
 ### Details
 
@@ -90,8 +90,8 @@ The demo includes the following client-side functionalities:
 
 ### Live Demo
 
-[![Demo ScreenShot](screen_chart_large.png)](http://demos.lightstreamer.com/ChartDemo)<br>
-### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/ChartDemo)<br>
+[![Demo ScreenShot](screen_chart_large.png)](https://demos.lightstreamer.com/ChartDemo/)<br>
+### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](https://demos.lightstreamer.com/ChartDemo/)<br>
 
 ### Details
 
