@@ -13,8 +13,8 @@ This project includes different demos based on [Lightstreamer - Stock-List Demo 
 
 ### Live Demo
 
-[![Demo ScreenShot](screen_basicstocklist_large.png)](http://demos.lightstreamer.com/StockListDemo_Basic)<br>
-### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/StockListDemo_Basic)<br>
+[![Demo ScreenShot](screen_basicstocklist_large.png)](https://demos.lightstreamer.com/StockListDemo_Basic/)<br>
+### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](https://demos.lightstreamer.com/StockListDemo_Basic/)<br>
 
 ### Details
 
