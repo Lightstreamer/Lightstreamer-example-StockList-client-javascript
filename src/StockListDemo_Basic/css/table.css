@@ -18,14 +18,16 @@
  */
 .demoTitle {
   font-family: Verdana, Arial, Helvetica, Sans-serif;
-  font-size: 9pt;
   color: #000000;
   font-weight: bold;
-  text-align: right;
+  display: inline-block;
+}
+.tableContainer {
+  overflow-x:auto;
+  margin-top: 1em;
 }
 .tableTitle {
   font-family: Verdana, Arial, Helvetica, Sans-serif;
-  font-size: 7pt;
   color: #ffffff;
   background-color: #9494ce;
   font-weight: bold;
@@ -34,7 +36,6 @@
 .disc { 
 	margin-top: 5px;
   font-family: Verdana, Arial, Helvetica, sans-serif; 
-	font-size: 7pt;
 	color: #000000; 
 	background: #ffffff;
 	font-weight: normal; 
@@ -42,7 +43,6 @@
 }
 .stockNameOdd {
   font-family: Verdana, Arial, Helvetica, Sans-serif;
-  font-size: 8pt;
   color: #000080;
   background-color: #eeeeee;
   font-weight: bold;
@@ -50,7 +50,6 @@
 }
 .stockNameEven {
   font-family: Verdana, Arial, Helvetica, Sans-serif;
-  font-size: 8pt;
   color: #000080;
   background-color: #ddddee;
   font-weight: bold;
@@ -58,7 +57,6 @@
 }
 .coldOdd {
   font-family: Verdana, Arial, Helvetica, Sans-serif;
-  font-size: 8pt;
   color: #000000;
   background-color: #eeeeee;
   font-weight: normal;
@@ -66,13 +64,11 @@
 }
 .coldEven {
   font-family: Verdana, Arial, Helvetica, Sans-serif;
-  font-size: 8pt;
   color: #000000;
   background-color: #ddddee;
   font-weight: normal;
   text-align: right;
 }
 #wrap {
-  width: 766px;
   margin: 0 auto;
 }

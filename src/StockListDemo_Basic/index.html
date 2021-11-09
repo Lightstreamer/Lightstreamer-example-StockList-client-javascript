@@ -22,6 +22,7 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <title>Lightstreamer :: Basic Stock-List Demo</title>
   <link rel="stylesheet" type="text/css" href="css/table.css" />
@@ -30,173 +31,169 @@
 <body>
   <a href="https://github.com/Lightstreamer/Lightstreamer-example-StockList-client-javascript"><img style="position: absolute; top: 0; right: 0; border: 0; z-index:1" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
   <div id="wrap">
-    <table width="766" border="0">  
-      <tr>
-        <td><a href="http://www.lightstreamer.com" target="_blank">
-          <img src="images/logo.png" alt="LIGHTSTREAMER" hspace="0" border="0" /></a></td>
-        <td class="demoTitle">BASIC STOCK-LIST DEMO</td>
-      </tr>
-    </table>
-
-    <br />
+        <a href="http://www.lightstreamer.com" target="_blank">
+          <img src="images/logo.png" alt="LIGHTSTREAMER" hspace="0" border="0" /></a>
+        <div class="demoTitle">BASIC STOCK-LIST DEMO</div>
 
     <!-- stock table -->
-    <table cellspacing="0" cellpadding="2" width="766" border="0" >
-      <tr class="tableTitle">
-        <td width="148" style="text-align: left">Name</td>
-        <td width="42">Last</td>
-        <td width="64" style="text-align: center">Time</td>
-        <td width="61">Change</td>
-        <td width="50">Bid Size</td>
-        <td width="50">Bid</td>
-        <td width="50">Ask</td>
-        <td width="50">Ask Size</td>
-        <td width="50">Min</td>
-        <td width="50">Max</td>
-        <td width="50">Ref.</td>
-        <td width="50">Open</td>
-      </tr>
-      <tr class="coldOdd">
-        <td nowrap="nowrap" style="text-align: left"><div class="stockNameOdd" data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="stock_name">Loading...</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="last_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="time">-</div></td>
-        <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="pct_change">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="bid_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="bid">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="ask">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="ask_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="min">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="max">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="ref_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="open_price">-</div></td>
-      </tr>
-      <tr class="coldEven">
-        <td nowrap="nowrap" style="text-align: left"><div class="stockNameEven" data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="stock_name">Loading...</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="last_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="time">-</div></td>
-        <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="pct_change">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="bid_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="bid">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="ask">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="ask_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="min">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="max">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="ref_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="open_price">-</div></td>
-      </tr>
-      <tr class="coldOdd">
-        <td nowrap="nowrap" style="text-align: left"><div class="stockNameOdd" data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="stock_name">Loading...</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="last_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="time">-</div></td>
-        <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="pct_change">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="bid_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="bid">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="ask">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="ask_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="min">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="max">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="ref_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="open_price">-</div></td>
-      </tr>
-      <tr class="coldEven">
-        <td nowrap="nowrap" style="text-align: left"><div class="stockNameEven" data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="stock_name">Loading...</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="last_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="time">-</div></td>
-        <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="pct_change">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="bid_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="bid">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="ask">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="ask_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="min">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="max">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="ref_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="open_price">-</div></td>
-      </tr>
-      <tr class="coldOdd">
-        <td nowrap="nowrap" style="text-align: left"><div class="stockNameOdd" data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="stock_name">Loading...</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="last_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="time">-</div></td>
-        <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="pct_change">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="bid_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="bid">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="ask">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="ask_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="min">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="max">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="ref_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="open_price">-</div></td>
-      </tr>
-      <tr class="coldEven">
-        <td nowrap="nowrap" style="text-align: left"><div class="stockNameEven" data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="stock_name">Loading...</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="last_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="time">-</div></td>
-        <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="pct_change">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="bid_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="bid">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="ask">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="ask_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="min">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="max">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="ref_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="open_price">-</div></td>
-      </tr>
-      <tr class="coldOdd">
-        <td nowrap="nowrap" style="text-align: left"><div class="stockNameOdd" data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="stock_name">Loading...</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="last_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="time">-</div></td>
-        <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="pct_change">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="bid_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="bid">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="ask">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="ask_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="min">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="max">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="ref_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="open_price">-</div></td>
-      </tr>
-      <tr class="coldEven">
-        <td nowrap="nowrap" style="text-align: left"><div class="stockNameEven" data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="stock_name">Loading...</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="last_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="time">-</div></td>
-        <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="pct_change">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="bid_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="bid">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="ask">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="ask_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="min">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="max">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="ref_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="open_price">-</div></td>
-      </tr>
-      <tr class="coldOdd">
-        <td nowrap="nowrap" style="text-align: left"><div class="stockNameOdd" data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="stock_name">Loading...</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="last_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="time">-</div></td>
-        <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="pct_change">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="bid_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="bid">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="ask">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="ask_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="min">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="max">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="ref_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="open_price">-</div></td>
-      </tr>
-      <tr class="coldEven">
-        <td nowrap="nowrap" style="text-align: left"><div class="stockNameEven" data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="stock_name">Loading...</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="last_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="time">-</div></td>
-        <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="pct_change">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="bid_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="bid">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="ask">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="ask_quantity">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="min">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="max">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="ref_price">-</div></td>
-        <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="open_price">-</div></td>
-      </tr>
-    </table>
+    <div class="tableContainer">
+      <table cellspacing="0" cellpadding="4" border="0" style="width: 100%;" >
+        <tr class="tableTitle">
+          <td style="text-align: left">Name</td>
+          <td >Last</td>
+          <td style="text-align: center">Time</td>
+          <td >Change</td>
+          <td >Bid Size</td>
+          <td >Bid</td>
+          <td >Ask</td>
+          <td >Ask Size</td>
+          <td >Min</td>
+          <td >Max</td>
+          <td >Ref.</td>
+          <td >Open</td>
+        </tr>
+        <tr class="coldOdd">
+          <td nowrap="nowrap" style="text-align: left"><div class="stockNameOdd" data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="stock_name">Loading...</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="last_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="time">-</div></td>
+          <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="pct_change">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="bid_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="bid">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="ask">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="ask_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="min">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="max">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="ref_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item1" data-field="open_price">-</div></td>
+        </tr>
+        <tr class="coldEven">
+          <td nowrap="nowrap" style="text-align: left"><div class="stockNameEven" data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="stock_name">Loading...</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="last_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="time">-</div></td>
+          <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="pct_change">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="bid_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="bid">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="ask">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="ask_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="min">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="max">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="ref_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item2" data-field="open_price">-</div></td>
+        </tr>
+        <tr class="coldOdd">
+          <td nowrap="nowrap" style="text-align: left"><div class="stockNameOdd" data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="stock_name">Loading...</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="last_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="time">-</div></td>
+          <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="pct_change">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="bid_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="bid">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="ask">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="ask_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="min">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="max">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="ref_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item3" data-field="open_price">-</div></td>
+        </tr>
+        <tr class="coldEven">
+          <td nowrap="nowrap" style="text-align: left"><div class="stockNameEven" data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="stock_name">Loading...</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="last_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="time">-</div></td>
+          <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="pct_change">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="bid_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="bid">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="ask">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="ask_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="min">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="max">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="ref_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item4" data-field="open_price">-</div></td>
+        </tr>
+        <tr class="coldOdd">
+          <td nowrap="nowrap" style="text-align: left"><div class="stockNameOdd" data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="stock_name">Loading...</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="last_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="time">-</div></td>
+          <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="pct_change">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="bid_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="bid">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="ask">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="ask_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="min">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="max">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="ref_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item5" data-field="open_price">-</div></td>
+        </tr>
+        <tr class="coldEven">
+          <td nowrap="nowrap" style="text-align: left"><div class="stockNameEven" data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="stock_name">Loading...</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="last_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="time">-</div></td>
+          <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="pct_change">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="bid_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="bid">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="ask">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="ask_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="min">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="max">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="ref_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item6" data-field="open_price">-</div></td>
+        </tr>
+        <tr class="coldOdd">
+          <td nowrap="nowrap" style="text-align: left"><div class="stockNameOdd" data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="stock_name">Loading...</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="last_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="time">-</div></td>
+          <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="pct_change">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="bid_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="bid">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="ask">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="ask_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="min">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="max">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="ref_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item7" data-field="open_price">-</div></td>
+        </tr>
+        <tr class="coldEven">
+          <td nowrap="nowrap" style="text-align: left"><div class="stockNameEven" data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="stock_name">Loading...</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="last_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="time">-</div></td>
+          <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="pct_change">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="bid_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="bid">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="ask">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="ask_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="min">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="max">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="ref_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item8" data-field="open_price">-</div></td>
+        </tr>
+        <tr class="coldOdd">
+          <td nowrap="nowrap" style="text-align: left"><div class="stockNameOdd" data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="stock_name">Loading...</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="last_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="time">-</div></td>
+          <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="pct_change">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="bid_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="bid">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="ask">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="ask_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="min">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="max">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="ref_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item9" data-field="open_price">-</div></td>
+        </tr>
+        <tr class="coldEven">
+          <td nowrap="nowrap" style="text-align: left"><div class="stockNameEven" data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="stock_name">Loading...</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="last_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="time">-</div></td>
+          <td nowrap="nowrap"><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="pct_change">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="bid_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="bid">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="ask">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="ask_quantity">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="min">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="max">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="ref_price">-</div></td>
+          <td><div data-source="lightstreamer" data-grid="stocks" data-item="item10" data-field="open_price">-</div></td>
+        </tr>
+      </table>
+    </div>
     <div class="disc">Simulated market data.</div>
 
     <script src="js/require.js"></script>
