@@ -109,7 +109,7 @@ If you want to install a version of one of these demos pointing to your local Li
 
 * Note that, as prerequisite, the [Lightstreamer - Stock- List Demo - Java Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Stocklist-adapter-java) has to be deployed on your local Lightstreamer Server instance. Please check out that project and follow the installation instructions provided with it.
 * Launch Lightstreamer Server.
-* Get the `lightstreamer.min.js` file from [npm](https://www.npmjs.com/package/lightstreamer-client-web) or [unpkg](https://unpkg.com/lightstreamer-client-web/lightstreamer.min.js) and put it in the `src/[demo_name]/js` folder of the demo (if that is the case, please create it).
+* Get the `lightstreamer.min.js` file for Web Client SDK version 8.0.x from [npm](https://www.npmjs.com/package/lightstreamer-client-web/v/8.0.7) or [unpkg](https://unpkg.com/lightstreamer-client-web@8.0/lightstreamer.min.js) and put it in the `src/[demo_name]/js` folder of the demo (if that is the case, please create it).
   Alternatively, you can generate a customized lightstreamer.min.js library containing only the classes you actually use;
   see the build instructions on the [GitHub page](https://github.com/Lightstreamer/Lightstreamer-lib-client-javascript#building).
   In that case, be sure to include the LightstreamerClient, Subscription, DynaGrid, StaticGrid, Chart, SimpleChartListener, ConnectionSharing, and StatusWidget modules.
@@ -160,4 +160,4 @@ As an alternative, it is possible to customize the build file to use [UglifyJS](
 
 ## Lightstreamer Compatibility Notes
 
-* Compatible with Lightstreamer Web Client library version 7.0 or newer (installation instructions for version 8.0 or newer).
+* Compatible with Lightstreamer Web Client library version 7.0 to 8.0.x (installation instructions for version 8.0.x).
