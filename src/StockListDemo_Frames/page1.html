@@ -105,17 +105,11 @@
 <script src="js/format.js" type="text/javascript"></script>
 <script>
 //////////////// Connect to current host (or localhost) and configure a StatusWidget
-  var hostToUse = document.location.protocol == "file:" ? "http://localhost:8080" : document.location.protocol+"//"+document.location.hostname+(document.location.port?":"+document.location.port:"");
+  var hostToUse = document.location.protocol == "file:" ? "http://localhost:8080" : document.location.protocol+"//"+document.location.hostname+":"+(document.location.protocol == "https:" ? "443" : "8080");
 
-  define("lsClient_1",["LightstreamerClient","StatusWidget","ConnectionSharing"],function(LightstreamerClient,StatusWidget,ConnectionSharing) {
+  define("lsClient_1",["LightstreamerClient","StatusWidget"],function(LightstreamerClient,StatusWidget) {
     var lsClient_1 = new LightstreamerClient(hostToUse,"DEMO");
 
-    if ( document.location.protocol == "file:") {
-	  lsClient_1.enableSharing(new ConnectionSharing("DemoCommonConnection", "ATTACH", "CREATE"));
-    } else {
-      // Please note the "WAIT" parameter in this case.
-	  lsClient_1.enableSharing(new ConnectionSharing("DemoCommonConnection", "ATTACH", "WAIT"));
-    }
     lsClient_1.addListener(new StatusWidget("left", "0px", true));
     lsClient_1.connect();
 
@@ -253,7 +247,7 @@
     subsItemList1.addListener(dynaGrid);
     subsItemList1.setDataAdapter("QUOTE_ADAPTER");
     subsItemList1.setRequestedSnapshot("yes");
-    subsItemList1.setRequestedMaxFrequency(1);
+    subsItemList1.setRequestedMaxFrequency("1");
 
     lsClient_1.subscribe(subsItemList1);
   });
