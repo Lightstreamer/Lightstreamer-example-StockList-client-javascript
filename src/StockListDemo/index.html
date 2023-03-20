@@ -287,13 +287,13 @@
     subsItemList1.addListener(dynaGrid);
     subsItemList1.setDataAdapter("QUOTE_ADAPTER");
     subsItemList1.setRequestedSnapshot("yes");
-    subsItemList1.setRequestedMaxFrequency(1);
+    subsItemList1.setRequestedMaxFrequency("1");
 
     subsItemList2 = new Subscription("MERGE",itemList2,fieldsList);
     subsItemList2.addListener(dynaGrid);
     subsItemList2.setDataAdapter("QUOTE_ADAPTER");
     subsItemList2.setRequestedSnapshot("yes");
-    subsItemList2.setRequestedMaxFrequency(1);
+    subsItemList2.setRequestedMaxFrequency("1");
 
     lsClient.subscribe(subsItemList1);
     //lsClient.subscribe(subsItemList2); //we may also subscribe both lists simultaneously

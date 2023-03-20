@@ -80,7 +80,7 @@ require(["js/lsClient","Subscription","StaticGrid","Chart","SimpleChartListener"
     var stockSubscription = new Subscription("MERGE",stocksData.extractItemList(),stocksData.extractFieldList());
     stockSubscription.setDataAdapter("QUOTE_ADAPTER");
     stockSubscription.setRequestedSnapshot("yes");
-    stockSubscription.setRequestedMaxFrequency(0.9);
+    stockSubscription.setRequestedMaxFrequency("0.9");
     stockSubscription.addListener(stocksData);
     stockSubscription.addListener(stocksChart);
     
