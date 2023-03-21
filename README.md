@@ -4,7 +4,6 @@ This project includes different demos based on [Lightstreamer - Stock-List Demo 
 
 * Basic Stock-List Demo
 * Stock-List Demo
-* Framed Stock-List Demo
 * Simple Grid Demo
 * Chart Demo
 
@@ -46,25 +45,6 @@ The demo includes the following client-side functionalities:
 * For each pop-up window opened, a [Subscription](https://lightstreamer.com/api/ls-web-client/latest/Subscription.html) containing 1 item, subscribed to in <b>MERGE</b> mode feeding both a [StaticGrid](https://lightstreamer.com/api/ls-web-client/latest/StaticGrid.html) and a [Chart](https://lightstreamer.com/api/ls-web-client/latest/Chart.html).
 
 <!-- END DESCRIPTION lightstreamer-example-stocklist-client-javascript-stock-list-demo---html-client -->
-
-## Framed Stock-List Demo - HTML Client
-<!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-framed-stock-list-demo---html-client -->
-
-### Live Demo
-
-[![Demo ScreenShot](screen_framedstocklist_large.png)](https://demos.lightstreamer.com/StockListDemo_Frames/)<br>
-### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](https://demos.lightstreamer.com/StockListDemo_Frames/)<br>
-
-### Details
-
-The same as the [Stock-List Demo](https://github.com/Lightstreamer/Lightstreamer-example-StockList-client-javascript#stock-list-demo---html-client), but with a different architecture for the LightstreamerClient integration.<br>
-A LightstreamerClient object is always kept alive in a hidden frame. For an explanation of the different deployment strategies, please refer to the "[Web Client Guide](https://github.com/Lightstreamer/Lightstreamer-lib-client-javascript/blob/master/docs/WebClientGuide.adoc)" document.
-
-The demo includes the following client-side functionalities:
-* A [Subscription](https://lightstreamer.com/api/ls-web-client/latest/Subscription.html) containing 15 items, subscribed to in <b>MERGE</b> mode feeding a [DynaGrid](https://lightstreamer.com/api/ls-web-client/latest/DynaGrid.html).
-* For each pop-up window opened, a [Subscription](https://lightstreamer.com/api/ls-web-client/latest/Subscription.html) containing 1 item, subscribed to in <b>MERGE</b> mode feeding both a [StaticGrid](https://lightstreamer.com/api/ls-web-client/latest/StaticGrid.html) and a [Chart](https://lightstreamer.com/api/ls-web-client/latest/Chart.html).
-
-<!-- END DESCRIPTION lightstreamer-example-stocklist-client-javascript-framed-stock-list-demo---html-client -->
 
 ## Simple Grid Demo - HTML Client
 <!-- START DESCRIPTION lightstreamer-example-stocklist-client-javascript-simple-grid-demo---html-client -->
@@ -109,10 +89,7 @@ If you want to install a version of one of these demos pointing to your local Li
 
 * Note that, as prerequisite, the [Lightstreamer - Stock- List Demo - Java Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Stocklist-adapter-java) has to be deployed on your local Lightstreamer Server instance. Please check out that project and follow the installation instructions provided with it.
 * Launch Lightstreamer Server.
-* Get the `lightstreamer.min.js` file for Web Client SDK version 8.0.x from [npm](https://www.npmjs.com/package/lightstreamer-client-web/v/8.0.7) or [unpkg](https://unpkg.com/lightstreamer-client-web@8.0/lightstreamer.min.js) and put it in the `src/[demo_name]/js` folder of the demo (if that is the case, please create it).
-  Alternatively, you can generate a customized lightstreamer.min.js library containing only the classes you actually use;
-  see the build instructions on the [GitHub page](https://github.com/Lightstreamer/Lightstreamer-lib-client-javascript#building).
-  In that case, be sure to include the LightstreamerClient, Subscription, DynaGrid, StaticGrid, Chart, SimpleChartListener, ConnectionSharing, and StatusWidget modules.
+* Get the `lightstreamer.min.js` file from [npm](https://www.npmjs.com/package/lightstreamer-client-web) or [unpkg](https://unpkg.com/lightstreamer-client-web/lightstreamer.min.js) and put it in the `src/[demo_name]/js` folder of the demo (if that is the case, please create it).
 * Get the `require.js` file form [requirejs.org](http://requirejs.org/docs/download.html) and put it in the `src/[demo_name]/js` folder of the demo.
 * This applies only for Simple Grid Demo. Get the zip file from [script.aculo.us](http://script.aculo.us/downloads) and put the `prototype.js`, `scriptaculous.js`, and `slider.js` files in the `src/[demo_name]/js/scriptaculous` folder of the demo.
 
@@ -160,4 +137,4 @@ As an alternative, it is possible to customize the build file to use [UglifyJS](
 
 ## Lightstreamer Compatibility Notes
 
-* Compatible with Lightstreamer Web Client library version 7.0 to 8.0.x (installation instructions for version 8.0.x).
+* Compatible with Lightstreamer Web Client library version 7.0 or newer (installation instructions for version 9.0 or newer).
