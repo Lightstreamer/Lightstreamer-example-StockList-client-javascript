@@ -137,4 +137,4 @@ As an alternative, it is possible to customize the build file to use [UglifyJS](
 
 ## Lightstreamer Compatibility Notes
 
-* Compatible with Lightstreamer Web Client library version 7.0 or newer (installation instructions for version 9.0 or newer).
+* Compatible with Lightstreamer Web Client library version 7.0 or newer.
